@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Creative Marketing Group | We make marketing easy (homepage mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Raleway:wght@300;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  --indigo-950:#101233; --indigo-900:#171A4D; --indigo-800:#1F2268;
+  --indigo:#2C308B;            /* CMG brand indigo */
+  --indigo-300:#A9ACDD; --indigo-100:#E3E4F3; --indigo-50:#F4F5FB;
+  --red:#E21C40;               /* CMG brand red */
+  --red-btn:#D7183A;
+  --purple:#522E90;            /* Allegra purple */
+  --magenta:#CC3366;           /* Allegra magenta */
+  --orange:#F08A24;            /* Allegra orange */
+  --ink:#1A1C3A; --slate:#585C7B; --line:#E2E4EF; --line-2:#C9CCE0;
+  --ribbon:linear-gradient(90deg,#2C308B,#522E90 30%,#CC3366 58%,#E21C40 78%,#F08A24);
+  --ribbon-lite:linear-gradient(90deg,#9A97F5,#C86BD0 35%,#F0527A 66%,#F9A03F);
+  --display:"Raleway","Plus Jakarta Sans",sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:3px solid #7C7FF0;outline-offset:2px;border-radius:6px}
+section{position:relative}
+.sec{padding:120px 0}
+
+/* The tagline system: light frame, bold fill-in word, ribbon underline */
+.easy{font-family:var(--display);font-weight:300;letter-spacing:-.015em;line-height:1.06;color:var(--indigo)}
+.easy b{font-weight:800;white-space:nowrap;padding-bottom:.05em;background:var(--ribbon) no-repeat 0 100%/100% .07em}
+.easy.on-dark{color:#fff}
+.easy.on-dark b{background-image:var(--ribbon-lite)}
+.h2{font-size:clamp(36px,4.7vw,60px)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
+.lead{font-size:19px;color:var(--slate);max-width:56ch}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15.5px;line-height:1;padding:16px 22px;border-radius:12px;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-red{background:var(--red-btn);color:#fff}
+.btn-red:hover{background:#BC1130}
+.btn-ghost{background:#fff;border-color:var(--line-2);color:var(--indigo)}
+.btn-ghost:hover{border-color:var(--indigo)}
+.btn-white{background:#fff;color:var(--indigo)}
+.btn-white:hover{background:var(--indigo-50)}
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;color:var(--indigo);text-decoration:none}
+.tlink svg{width:17px;height:17px;transition:transform .18s}
+.tlink:hover{color:var(--red)}
+.tlink:hover svg{transform:translateX(3px)}
+
+/* ---------- Utility bar + header ---------- */
+.util{background:var(--indigo-950);color:#C9CBE8;font-size:13.5px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:40px}
+.util a{color:#fff;text-decoration:none;font-weight:600}
+.util a:hover{text-decoration:underline}
+.util-r{display:flex;gap:24px;align-items:center}
+.util-r svg{width:13px;height:13px;vertical-align:-1px;margin-left:3px}
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:80px}
+.logo img{height:42px;width:auto}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav>li{position:relative}
+.nav-l{display:flex;align-items:center;gap:6px;padding:10px 13px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;background:none;border:0;cursor:pointer}
+.nav-l svg{width:14px;height:14px;opacity:.55}
+.nav-l:hover,.nav>li:focus-within>.nav-l{background:var(--indigo-50);color:var(--indigo)}
+.menu{position:absolute;top:calc(100% + 10px);left:-14px;width:330px;background:#fff;border-radius:18px;padding:12px;box-shadow:0 24px 60px -18px rgba(16,18,51,.35),0 0 0 1px var(--line);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .16s,transform .16s,visibility .16s}
+.menu::before{content:"";position:absolute;inset:-12px 0 auto;height:12px}
+.nav>li:hover .menu,.nav>li:focus-within .menu{opacity:1;visibility:visible;transform:none}
+.menu-h{font-size:21px;padding:8px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.menu a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14.5px;line-height:1.35}
+.menu a span{display:block;font-weight:400;font-size:13px;color:var(--slate)}
+.menu a:hover{background:var(--indigo-50);color:var(--indigo)}
+.hdr-tel{font-weight:700;color:var(--red);text-decoration:none;font-size:15.5px;white-space:nowrap}
+.hdr .btn{padding:13px 18px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;cursor:pointer;place-items:center}
+.burger svg{width:22px;height:22px}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(150deg,#15174A 0%,#2C308B 56%,#47309A 100%);color:#fff;padding:76px 0 236px;overflow:hidden}
+.hero-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero-top{--fs:clamp(50px,8.8vw,116px);position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,430px);align-items:start}
+.hero .eyebrow{grid-column:1/-1;color:#C9CBE8;display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.hero .eyebrow::before{content:"";width:44px;height:3px;border-radius:9px;background:var(--ribbon-lite)}
+.tagline{grid-column:1/-1;grid-row:2;font-size:var(--fs);line-height:1.04;color:#fff}
+.tagline .t1,.tagline .t2{display:block;white-space:nowrap}
+.x-slot{position:relative;display:inline-block;vertical-align:baseline;font-weight:800;padding-bottom:.05em;background:var(--ribbon-lite) no-repeat 0 100%/100% .062em;transition:width .55s cubic-bezier(.65,0,.2,1)}
+.x-sizer{visibility:hidden}
+.x-word{position:absolute;left:0;top:0;font-weight:800;background:none!important;padding:0!important;transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.x-word.pre{opacity:0;transform:translateY(.28em)}
+.x-word.out{opacity:0;transform:translateY(-.28em)}
+/* Sits beside "easy." on line two, clear of the rotating word above it */
+.hero-sub{grid-column:2;grid-row:2;margin-top:calc(var(--fs)*1.34);position:relative;z-index:1}
+.hero-sub p{font-size:18.5px;line-height:1.6;color:#DCDDF3}
+.hero-sub p strong{color:#fff;font-weight:600}
+
+/* ---------- Plan builder (decision tree) ---------- */
+.plan-sec{margin-top:-176px;z-index:2;padding-bottom:20px}
+.builder{display:grid;grid-template-columns:minmax(0,1fr) 348px;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(16,18,51,.5),0 0 0 1px rgba(16,18,51,.06)}
+.b-main{display:flex;flex-direction:column;padding:30px 36px 28px;min-height:590px}
+.b-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:26px}
+.b-kicker{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.stepper{display:flex;align-items:center;gap:8px}
+.stepper li{display:flex;align-items:center;gap:8px}
+.stepper li+li::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--line)}
+.stepper li.is-done+li::before{background:var(--indigo)}
+.st{display:flex;align-items:center;gap:8px;background:none;border:0;padding:0;font-size:13.5px;font-weight:600;color:var(--slate);cursor:default}
+.st i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line-2);font-style:normal;font-size:12.5px;font-weight:700;background:#fff}
+.st svg{width:14px;height:14px;display:none}
+.is-current .st{color:var(--indigo)}
+.is-current .st i{border-color:var(--indigo);box-shadow:0 0 0 4px var(--indigo-100)}
+.is-done .st{cursor:pointer;color:var(--ink)}
+.is-done .st i{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.is-done .st i span{display:none}
+.is-done .st svg{display:block}
+.b-title{font-family:var(--body);font-size:28px;font-weight:700;letter-spacing:-.015em;line-height:1.2;color:var(--ink)}
+.b-title:focus{outline:none}
+.b-hint{color:var(--slate);font-size:16px;margin:6px 0 22px}
+.b-body{flex:1;animation:rise .28s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+.b-foot{display:flex;align-items:center;gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.b-count{margin-right:auto;font-size:14px;color:var(--slate)}
+#b-back{order:-1}
+#b-back + .b-count{margin-left:4px}
+
+.ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--c,var(--indigo)) 11%,#fff);color:var(--c,var(--indigo))}
+.ic svg{width:22px;height:22px}
+.ic.sm{width:34px;height:34px;border-radius:10px}
+.ic.sm svg{width:18px;height:18px}
+
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;border:1.5px solid var(--line);border-radius:16px;background:#fff;padding:18px 18px 17px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s}
+.tile:hover{border-color:var(--indigo-300);transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(44,48,139,.45)}
+.tile[aria-pressed=true]{border-color:var(--indigo);background:var(--indigo-50);box-shadow:inset 0 0 0 1px var(--indigo)}
+.tile strong{display:block;font-size:17px;font-weight:700;line-height:1.25;margin-top:14px}
+.tile .d{display:block;font-size:14px;line-height:1.45;color:var(--slate);margin-top:4px}
+.tk{position:absolute;top:16px;right:16px;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;color:transparent;background:#fff;transition:.15s}
+.tk svg{width:14px;height:14px}
+[aria-pressed=true]>.tk{background:var(--indigo);border-color:var(--indigo);color:#fff}
+
+.grp{border:0;padding:0;margin:0 0 22px}
+.grp legend{display:flex;align-items:center;gap:12px;padding:0;margin-bottom:12px}
+.grp legend strong{display:block;font-size:16px;line-height:1.2}
+.grp legend em{display:block;font-style:normal;font-size:14px;color:var(--slate)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 15px 10px 12px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:14.5px;font-weight:600;cursor:pointer;transition:.15s}
+.chip svg{width:16px;height:16px;padding:2px;border-radius:50%;border:1.5px solid var(--line-2);color:transparent;box-sizing:content-box}
+.chip:hover{border-color:var(--indigo-300)}
+.chip[aria-pressed=true]{border-color:var(--indigo);background:var(--indigo-50);color:var(--indigo)}
+.chip[aria-pressed=true] svg{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.b-note{font-size:14.5px;color:var(--slate);background:var(--indigo-50);border-radius:12px;padding:12px 14px}
+
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:24px}
+.opt{display:flex;align-items:center;gap:12px;text-align:left;padding:16px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-weight:600;font-size:15.5px;cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--indigo-300)}
+.rd{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line-2);flex:none;display:grid;place-items:center;background:#fff}
+.rd::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--indigo);transform:scale(0);transition:transform .15s}
+[aria-checked=true]{border-color:var(--indigo)!important;background:var(--indigo-50)!important}
+[aria-checked=true] .rd{border-color:var(--indigo)}
+[aria-checked=true] .rd::after{transform:scale(1)}
+
+.follow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.fcard{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.15s}
+.fcard:hover{border-color:var(--indigo-300)}
+.fcard strong{display:block;font-size:15.5px;line-height:1.3}
+.fcard .d{display:block;font-size:13.5px;line-height:1.4;color:var(--slate)}
+.fcard .rd{margin-left:auto}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.field{display:block}
+.field.wide{grid-column:1/-1}
+.field>span{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+.field i{font-style:normal;font-weight:400;color:var(--slate)}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border-radius:11px;border:1.5px solid var(--line-2);background:#fff;font-size:15.5px;transition:border-color .15s,box-shadow .15s}
+.field textarea{resize:vertical;min-height:52px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 4px var(--indigo-100)}
+.field.err input{border-color:var(--red)}
+.field .msg{display:none;font-size:13px;color:var(--red-btn);margin-top:4px;font-weight:500}
+.field.err .msg{display:block}
+
+.b-body:has(.done){display:grid;place-items:center}
+.done{text-align:center;max-width:500px;padding:24px 0}
+.done-ic{width:72px;height:72px;border-radius:50%;margin:0 auto 24px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#522E90,#CC3366 55%,#F08A24)}
+.done-ic svg{width:34px;height:34px}
+.done h3{font-size:30px;line-height:1.2;letter-spacing:-.015em;margin-bottom:12px}
+.done h3:focus{outline:none}
+.done p{color:var(--slate)}
+.done .mock{font-size:13px;width:fit-content;margin:20px auto 24px;padding:8px 12px;border-radius:10px;background:var(--indigo-50)}
+
+.b-plan{background:var(--indigo-50);border-left:1px solid var(--line);padding:32px 28px 28px;display:flex;flex-direction:column}
+.plan-k{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.plan-k::after{content:"";flex:1;height:2px;border-radius:2px;background:var(--ribbon);opacity:.85}
+.tree{font-size:15px;line-height:1.35}
+.tree ul{padding-left:25px}
+.tree li{position:relative;padding-top:10px}
+.tree ul>li::before{content:"";position:absolute;left:-17px;top:0;width:13px;height:20px;border-left:1.5px solid var(--line-2);border-bottom:1.5px solid var(--line-2);border-bottom-left-radius:8px}
+.tree ul>li:not(:last-child)::after{content:"";position:absolute;left:-17px;top:0;bottom:0;border-left:1.5px solid var(--line-2)}
+.root{display:inline-flex;align-items:center;gap:9px;font-weight:700}
+.root::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--indigo);box-shadow:inset 0 0 0 4px #fff,0 0 0 1.5px var(--indigo)}
+.node{display:inline-flex;align-items:center;gap:8px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 11px 6px 9px;animation:rise .25s ease both}
+.node i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--slate));flex:none}
+.node.meta{font-weight:500;color:var(--slate);background:none;border-style:dashed}
+.leaf{display:inline-block;color:var(--slate);font-size:14.5px;padding-top:1px;animation:rise .25s ease both}
+.tree .ghost{display:block;height:30px;border-radius:10px;border:1.5px dashed var(--line-2)}
+.plan-empty{margin-top:18px;font-size:14.5px;color:var(--slate)}
+.recs{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.recs h4{margin:0 0 10px;font-size:13.5px;font-weight:700}
+.recs div{display:flex;flex-wrap:wrap;gap:6px}
+.rec{font-size:13px;font-weight:600;text-decoration:none;color:var(--indigo);background:#fff;border:1px solid var(--indigo-100);border-radius:99px;padding:5px 11px}
+.rec:hover{border-color:var(--indigo)}
+.plan-foot{margin-top:auto;padding-top:26px;font-size:13.5px;color:var(--slate)}
+.plan-foot a{color:var(--indigo);font-weight:700;text-decoration:none;white-space:nowrap}
+
+/* ---------- Proof strip ---------- */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);margin-top:72px}
+.proof li{padding:4px 36px;border-left:1px solid var(--line)}
+.proof li:first-child{padding-left:0;border-left:0}
+.proof strong{display:block;font-family:var(--display);font-weight:300;font-size:42px;line-height:1.1;color:var(--indigo);font-feature-settings:"lnum" 1;letter-spacing:-.01em}
+.proof span{display:block;color:var(--slate);font-size:16px;margin-top:6px;text-wrap:balance}
+
+/* ---------- Services ---------- */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:76px;align-items:center}
+.feature+.feature{margin-top:120px}
+.feature.flip .f-media{order:-1}
+.feature .lead{margin-top:20px}
+.f-links{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;margin:28px 0 34px}
+.f-links a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:15.5px;text-decoration:none;transition:color .15s,padding .15s}
+.f-links svg{width:16px;height:16px;color:var(--indigo-300);transition:transform .18s,color .18s;flex:none}
+.f-links a:hover{color:var(--indigo)}
+.f-links a:hover svg{color:var(--red);transform:translateX(3px)}
+.f-cta{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+
+.shot{position:relative;border-radius:28px;padding:54px 30px 46px;overflow:hidden;background:radial-gradient(120% 100% at 85% 0%,#4336A6 0%,#2C308B 42%,#171A4D 100%)}
+.shot::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ribbon-lite)}
+.shot img{position:relative;width:100%;filter:drop-shadow(0 26px 30px rgba(8,9,30,.45))}
+.shot figcaption{position:relative;margin-top:20px;font-size:13.5px;color:#C9CBE8;display:flex;justify-content:space-between;gap:12px}
+.shot figcaption b{color:#fff;font-weight:600}
+figure{margin:0}
+
+.mkt{position:relative;border-radius:28px;background:var(--indigo-50);padding:44px 44px 92px}
+.mkt-search{display:flex;align-items:center;gap:12px;background:#fff;border-radius:99px;padding:14px 20px;font-size:15.5px;color:var(--slate);box-shadow:0 0 0 1px var(--line)}
+.mkt-search svg{width:18px;height:18px;color:var(--indigo)}
+.mkt-search b{color:var(--ink);font-weight:600}
+.mkt-res{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;margin-top:12px}
+.mkt-res .rank{font-family:var(--display);font-weight:300;font-size:30px;line-height:1;width:24px;color:var(--indigo-300);font-feature-settings:"lnum" 1}
+.mkt-res.top{background:#fff;box-shadow:0 18px 40px -22px rgba(44,48,139,.55),0 0 0 1px var(--line);margin-top:20px;position:relative;overflow:hidden}
+.mkt-res.top::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#522E90,#CC3366,#F08A24)}
+.mkt-res.top .rank{color:var(--indigo);font-weight:800}
+.mkt-res strong{display:block;font-size:17px;line-height:1.3}
+.mkt-res .stars{color:var(--orange);letter-spacing:2px;font-size:14px}
+.mkt-res .url{color:var(--slate);font-size:13.5px;margin-left:8px}
+.mkt-res .pill{margin-left:auto;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--indigo);border-radius:99px;padding:6px 11px}
+.sk{display:block;height:10px;border-radius:9px;background:var(--indigo-100);margin:5px 0}
+.mkt-res .grow{flex:1}
+.mkt-chart{position:absolute;right:28px;bottom:-26px;width:250px;background:#fff;border-radius:18px;padding:16px 18px 12px;box-shadow:0 24px 50px -24px rgba(16,18,51,.5),0 0 0 1px var(--line)}
+.mkt-chart span{display:flex;justify-content:space-between;font-size:13px;font-weight:700}
+.mkt-chart span em{font-style:normal;color:#1E8E5A;font-weight:700}
+.mkt-chart svg{display:block;width:100%;height:auto;margin-top:6px}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:120px}
+.card{border-radius:28px;padding:44px;display:flex;flex-direction:column;align-items:flex-start}
+.card .easy{font-size:clamp(32px,3.5vw,44px)}
+.card p:not(.eyebrow){margin-top:16px;color:var(--slate);max-width:44ch}
+.card-brand{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 30px}
+.tags a{font-size:14.5px;font-weight:600;text-decoration:none;border:1.5px solid var(--line);border-radius:99px;padding:8px 14px;transition:.15s}
+.tags a:hover{border-color:var(--indigo);color:var(--indigo)}
+.card .tlink{margin-top:auto}
+.card-print{background:linear-gradient(150deg,#5B33A0,#3F2378);color:#fff;position:relative;overflow:hidden}
+.card-print::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ribbon-lite)}
+.card-print p:not(.eyebrow){color:#DDD3F1}
+.card-print .al{height:30px;width:auto;margin-bottom:26px}
+.card-print .tags a{border-color:rgba(255,255,255,.28);color:#fff;display:inline-flex;align-items:center;gap:8px}
+.card-print .tags a:hover{border-color:#fff;color:#fff}
+.card-print .tags i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.card-print .tlink{color:#fff}
+.card-print .tlink:hover{color:#FFD9A8}
+
+/* ---------- Process ---------- */
+.tint{background:var(--indigo-50)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;padding-top:34px}
+.steps::before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;border-radius:3px;background:var(--ribbon)}
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;top:-34px;left:0;width:19px;height:19px;border-radius:50%;background:#fff;border:3px solid var(--indigo)}
+.steps li:nth-child(2)::before{border-color:var(--purple)}
+.steps li:nth-child(3)::before{border-color:var(--magenta)}
+.steps li:nth-child(4)::before{border-color:var(--orange)}
+.steps .n{font-family:var(--display);font-weight:300;font-size:52px;line-height:1;color:var(--indigo);font-feature-settings:"lnum" 1}
+.steps h3{font-size:19px;line-height:1.3;margin:14px 0 8px}
+.steps p{font-size:15.5px;color:var(--slate)}
+
+/* ---------- Work ---------- */
+.work{background:var(--indigo-950);color:#fff}
+.work .eyebrow{color:#F9A03F}
+.work h2{font-family:var(--display);font-weight:300;letter-spacing:-.015em;line-height:1.08}
+.work h2 b{font-weight:800}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.proj{text-decoration:none;display:block}
+.proj-img{border-radius:22px;padding:34px 22px 28px;background:linear-gradient(160deg,#262A7C,#191C55);transition:transform .25s,background .25s;overflow:hidden}
+.proj-img img{width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 18px 20px rgba(5,6,22,.5))}
+.proj:hover .proj-img img{transform:scale(1.045)}
+.proj h3{font-size:19px;margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.proj h3 svg{width:18px;height:18px;opacity:.5;transition:.18s}
+.proj:hover h3 svg{opacity:1;transform:translate(2px,-2px)}
+.proj p{font-size:14.5px;color:var(--indigo-300);margin-top:2px}
+
+/* ---------- Testimonials ---------- */
+.voices{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:76px;align-items:center}
+.bigq{font-size:clamp(40px,5.4vw,72px);line-height:1.08}
+.who{margin-top:26px;font-size:16px;color:var(--slate)}
+.who strong{color:var(--ink);display:block;font-size:17px}
+.qs{display:grid;gap:14px}
+.q{border:1.5px solid var(--line);border-radius:18px;padding:22px 24px;background:#fff}
+.q p{font-size:17px;line-height:1.5;font-weight:500}
+.q footer{margin-top:10px;font-size:14.5px;color:var(--slate)}
+.q footer b{color:var(--ink);font-weight:700}
+
+/* ---------- Insights ---------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{display:flex;flex-direction:column;background:#fff;border-radius:22px;padding:30px;text-decoration:none;min-height:250px;box-shadow:0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.post:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--indigo-300),0 24px 40px -28px rgba(44,48,139,.5)}
+.post .tag{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--indigo));display:flex;align-items:center;gap:8px}
+.post .tag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.post h3{font-size:21px;line-height:1.3;letter-spacing:-.01em;margin:16px 0 24px}
+.post .tlink{margin-top:auto}
+
+/* ---------- Closing CTA + footer ---------- */
+.cta{background:linear-gradient(150deg,#15174A 0%,#2C308B 60%,#47309A 100%);color:#fff;overflow:hidden;text-align:center;padding:120px 0}
+.cta .easy{font-size:clamp(40px,6.4vw,88px)}
+.cta p{font-size:19px;color:#DCDDF3;max-width:52ch;margin:24px auto 36px}
+.cta-b{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+.ftr{background:var(--indigo-950);color:#C9CBE8;padding:76px 0 30px;font-size:15px}
+.ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+.ftr-logos{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.ftr-logos img:first-child{height:50px;width:auto}
+.ftr-logos img:last-child{height:26px;width:auto}
+.ftr-logos span{width:1px;height:40px;background:rgba(255,255,255,.25)}
+.ftr address{font-style:normal;line-height:1.7}
+.ftr a{text-decoration:none}
+.ftr a:hover{color:#fff}
+.ftr .tel{color:#fff;font-weight:700;font-size:18px}
+.ftr h4{color:#fff;font-size:15px;margin:0 0 16px}
+.ftr li{margin-bottom:9px}
+.ftr-print{margin-top:22px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.06);max-width:330px}
+.ftr-print a{color:#fff;font-weight:600}
+.ftr-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px}
+.ftr-bot div{display:flex;gap:22px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .nav,.hdr-tel{display:none}
+  .burger{display:grid}
+  .hdr .btn{display:none}
+  .nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:100%;left:0;right:0;background:#fff;padding:12px 24px 20px;border-bottom:1px solid var(--line);box-shadow:0 30px 40px -30px rgba(16,18,51,.4);margin:0}
+  .nav.open .menu{display:none}
+  .nav.open .nav-l{width:100%;padding:14px 4px;font-size:17px;border-bottom:1px solid var(--line);border-radius:0}
+  .nav.open .nav-l svg{display:none}
+  .builder{grid-template-columns:1fr}
+  .b-plan{border-left:0;border-top:1px solid var(--line)}
+  .b-main{min-height:0}
+  .feature{gap:48px}
+}
+@media (max-width:900px){
+  .sec{padding:84px 0}
+  .hero{padding-top:56px}
+  .hero-top{grid-template-columns:1fr}
+  .hero-sub{grid-column:1;grid-row:3;margin-top:26px;max-width:560px}
+  .feature{grid-template-columns:minmax(0,1fr)}
+  .feature.flip .f-media{order:0}
+  .feature+.feature,.duo{margin-top:84px}
+  .duo,.voices{grid-template-columns:1fr;gap:24px}
+  .voices{gap:44px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:44px}
+  .steps::before,.steps li::before{display:none}
+  .steps{padding-top:0}
+  .work-grid,.posts{grid-template-columns:1fr}
+  .proof{grid-template-columns:1fr;gap:26px;margin-top:56px}
+  .proof li{padding:0 0 0 20px;border-left:3px solid var(--indigo-100)}
+  .proof li:first-child{padding-left:20px;border-left:3px solid var(--indigo-100)}
+  .ftr-top{grid-template-columns:1fr 1fr}
+  .util-l{display:none}
+  .util .wrap{justify-content:center}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{width:min(1200px,100% - 32px)}
+  .tagline{font-size:clamp(50px,15.5vw,104px)}
+  .x-slot{display:block}
+  .b-main{padding:22px 18px 20px}
+  .b-top{flex-direction:column;align-items:flex-start;gap:14px}
+  .st b{display:none}
+  .is-current .st b{display:inline}
+  .b-title{font-size:23px}
+  .tiles{grid-template-columns:1fr 1fr;gap:10px}
+  .tile{padding:14px}
+  .tile strong{font-size:15.5px}
+  .tile .d{font-size:13px}
+  .opts,.follow,.fields{grid-template-columns:1fr}
+  .b-plan{padding:24px 18px}
+  .b-count{display:none}
+  .b-foot .btn{flex:1}
+  .f-links{grid-template-columns:1fr}
+  .mkt{padding:22px 18px 84px}
+  .mkt-res{gap:12px;padding:14px}
+  .mkt-res>div{min-width:0}
+  .mkt-res .url{display:block;margin:0}
+  .mkt-chart{right:14px;width:210px}
+  .card{padding:30px 24px}
+  .shot{padding:36px 16px 30px}
+  .ftr-top{grid-template-columns:1fr;gap:34px}
+  .ftr-logos{gap:12px}
+  .ftr-logos img:first-child{height:42px}
+  .ftr-logos img:last-child{height:22px}
+  .util-r a:first-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- Utility bar: ties the digital team to the Allegra print shop -->
+<div class="util">
+  <div class="wrap">
+    <span class="util-l">Web, marketing and print under one roof in Portage, Michigan</span>
+    <span class="util-r">
+      <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Need print, mail or signs? Visit Allegra Portage<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a href="tel:269-324-0040">269-324-0040</a>
+    </span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Creative Marketing Group home">
+      <img src="https://allegracmg.com/wp-content/uploads/2024/11/CMG-Allegra-horiz.webp" width="460" height="60" alt="Creative Marketing Group | Allegra Marketing Print Mail">
+    </a>
+    <ul class="nav" id="nav">
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Web <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>web</b> easy.</p>
+          <a href="#">Website Design<span>Custom, mobile-friendly sites that convert</span></a>
+          <a href="#">Ecommerce Web Design<span>Online stores that are simple to run</span></a>
+          <a href="#">Web Hosting<span>Fast, secure and looked after for you</span></a>
+          <a href="#">ADA Compliance<span>Accessible to every visitor</span></a>
+          <a href="#">Systems Integration<span>Connect your site to your CRM or ERP</span></a>
+          <a href="#">Marketing Automation<span>Follow-up that runs itself</span></a>
+        </div>
+      </li>
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>marketing</b> easy.</p>
+          <a href="#">Search Engine Optimization<span>Rank higher, get found first</span></a>
+          <a href="#">Pay-Per-Click Advertising<span>Ads that reach ready-to-buy customers</span></a>
+          <a href="#">Local Listings<span>Show up on maps and local search</span></a>
+          <a href="#">Landing Pages<span>Pages built for one job: converting</span></a>
+          <a href="#">Email Marketing<span>Stay top of mind with your customers</span></a>
+          <a href="#">Reputation Management<span>More reviews, better reviews</span></a>
+        </div>
+      </li>
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Creative <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>branding</b> easy.</p>
+          <a href="#">Brand Development<span>Logos and identities that fit</span></a>
+          <a href="#">Graphic Design<span>Design for screen and print</span></a>
+          <a href="#">Content Creation<span>Words and visuals that sell</span></a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Print, Mail &amp; Signs<span>Produced in-house by Allegra Portage</span></a>
+        </div>
+      </li>
+      <li><a class="nav-l" href="#work">Work</a></li>
+      <li><a class="nav-l" href="#">About</a></li>
+      <li><a class="nav-l" href="#insights">Insights</a></li>
+    </ul>
+    <a class="hdr-tel" href="tel:269-324-0040">269-324-0040</a>
+    <a class="btn btn-red" href="#plan">Get a proposal</a>
+    <button class="burger" type="button" aria-label="Open menu" aria-controls="nav" aria-expanded="false" id="burger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="rb" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
+        <stop offset="0" stop-color="#9A97F5" stop-opacity="0"/>
+        <stop offset=".32" stop-color="#9A7BEA"/>
+        <stop offset=".6" stop-color="#E0518A"/>
+        <stop offset=".82" stop-color="#F0506A"/>
+        <stop offset="1" stop-color="#F9A03F"/>
+      </linearGradient>
+    </defs>
+    <g id="lines" fill="none" stroke="url(#rb)" stroke-width="1.1"></g>
+  </svg>
+
+  <div class="wrap hero-top">
+    <p class="eyebrow">Creative Marketing Group · Portage, Michigan</p>
+    <h1 class="easy tagline">
+      <span class="sr-only">We make marketing easy. We make web easy.</span>
+      <span class="t1" aria-hidden="true">We make <span class="x-slot" id="xslot"><span class="x-sizer">marketing</span><b class="x-word">marketing</b></span></span>
+      <span class="t2" aria-hidden="true">easy.</span>
+    </h1>
+    <div class="hero-sub">
+      <p><strong>Websites, digital marketing and creative from one local team</strong>, with Allegra's print, mail and sign shop under the same roof.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN BUILDER (decision tree) ============ -->
+<section class="plan-sec" id="plan" aria-label="Plan builder">
+  <div class="wrap">
+    <div class="builder">
+      <div class="b-main">
+        <div class="b-top">
+          <p class="b-kicker">Start here · takes about a minute</p>
+          <ol class="stepper" id="stepper" aria-label="Progress"></ol>
+        </div>
+        <h2 class="b-title" id="b-title" tabindex="-1"></h2>
+        <p class="b-hint" id="b-hint"></p>
+        <div class="b-body" id="b-body"></div>
+        <div class="b-foot" id="b-foot">
+          <span class="b-count" id="b-count"></span>
+          <button type="button" class="btn btn-ghost" id="b-back">Back</button>
+          <button type="button" class="btn btn-red" id="b-next"></button>
+        </div>
+      </div>
+      <aside class="b-plan" aria-label="Your plan so far">
+        <p class="plan-k">Your plan</p>
+        <div id="plan-tree" aria-live="polite"></div>
+        <div class="recs" id="plan-recs" hidden></div>
+        <p class="plan-foot">Rather just talk? Call <a href="tel:269-324-0040">269-324-0040</a> and a real person in Portage will pick up.</p>
+      </aside>
+    </div>
+
+    <ul class="proof">
+      <li><strong>30+ years</strong><span>planning, designing and building websites</span></li>
+      <li><strong>One roof</strong><span>web, marketing, creative and print in Portage</span></li>
+      <li><strong>Local team</strong><span>real people you can call or sit down with</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <p class="eyebrow">Website services</p>
+        <h2 class="easy h2">We make <b>web</b> easy.</h2>
+        <p class="lead">Your website should work as hard as you do. We design, build, host and look after sites that look sharp, load fast and turn visitors into customers.</p>
+        <ul class="f-links">
+          <li><a href="#">Website Design <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Ecommerce Web Design <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Web Hosting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">ADA Compliance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Systems Integration <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Marketing Automation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ul>
+        <div class="f-cta">
+          <a class="btn btn-red" href="#plan" data-plan="web">Plan my website <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="tlink" href="#">All website services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <figure class="f-media shot">
+        <img src="https://allegracmg.com/wp-content/uploads/2024/02/Wild-Wild-Wash-1108x637.webp" width="1108" height="637" loading="lazy" alt="Wild Wild Wash website shown on a laptop and a phone">
+        <figcaption><b>Wild Wild Wash</b><span>Website by Creative Marketing Group</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="feature flip">
+      <div>
+        <p class="eyebrow">Marketing services</p>
+        <h2 class="easy h2">We make <b>marketing</b> easy.</h2>
+        <p class="lead">Get found, get chosen and stay top of mind. We handle the search rankings, ads, listings and email, then report back in plain English.</p>
+        <ul class="f-links">
+          <li><a href="#">Search Engine Optimization <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Pay-Per-Click Advertising <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Local Listings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Landing Pages <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Email Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="#">Reputation Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ul>
+        <div class="f-cta">
+          <a class="btn btn-red" href="#plan" data-plan="grow">Plan my marketing <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="tlink" href="#">All marketing services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="f-media mkt" aria-hidden="true">
+        <div class="mkt-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+          <span>best <b>[what you do]</b> near me</span>
+        </div>
+        <div class="mkt-res top">
+          <span class="rank">1</span>
+          <div><strong>Your Business</strong><span class="stars">★★★★★</span><span class="url">yourbusiness.com</span></div>
+          <span class="pill">You</span>
+        </div>
+        <div class="mkt-res"><span class="rank">2</span><div class="grow"><i class="sk" style="width:44%"></i><i class="sk" style="width:68%"></i></div></div>
+        <div class="mkt-res"><span class="rank">3</span><div class="grow"><i class="sk" style="width:52%"></i><i class="sk" style="width:60%"></i></div></div>
+        <div class="mkt-chart">
+          <span>New leads <em>↑ trending up</em></span>
+          <svg viewBox="0 0 220 84" fill="none">
+            <defs><linearGradient id="cg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2C308B"/><stop offset=".5" stop-color="#CC3366"/><stop offset="1" stop-color="#F08A24"/></linearGradient>
+            <linearGradient id="cf" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#CC3366" stop-opacity=".16"/><stop offset="1" stop-color="#CC3366" stop-opacity="0"/></linearGradient></defs>
+            <path d="M4 70 C 34 66, 48 54, 74 52 S 112 36, 140 32 S 186 14, 216 8 V84 H4Z" fill="url(#cf)"/>
+            <path d="M4 70 C 34 66, 48 54, 74 52 S 112 36, 140 32 S 186 14, 216 8" stroke="url(#cg)" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="card card-brand">
+        <p class="eyebrow">Creative services</p>
+        <h2 class="easy">We make <b>branding</b> easy.</h2>
+        <p>A logo, a look and a voice that feel like you, applied consistently everywhere your customers see you.</p>
+        <div class="tags"><a href="#">Brand Development</a><a href="#">Graphic Design</a><a href="#">Content Creation</a></div>
+        <a class="tlink" href="#plan" data-plan="brand">Plan my brand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card card-print">
+        <img class="al" src="https://allegracmg.com/wp-content/uploads/2024/11/AllegraMPM-rev.webp" width="250" height="39" loading="lazy" alt="Allegra Marketing Print Mail">
+        <h2 class="easy on-dark">We make <b>print</b> easy, too.</h2>
+        <p>Business cards to building signs, printed and mailed in-house by Allegra Portage, so your brand matches on screen and on paper.</p>
+        <div class="tags">
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#9BC53D"></i>Print</a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#F08A24"></i>Direct Mail</a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#F0506A"></i>Signs</a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#C7A6FF"></i>Promo</a>
+        </div>
+        <a class="tlink" href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Visit Allegra Portage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">How it works</p>
+        <h2 class="easy h2">We make <b>the process</b> easy.</h2>
+      </div>
+      <p class="lead" style="max-width:34ch;text-wrap:balance">Four clear steps, one point of contact and no homework for you.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">01</span><h3>Tell us what you need</h3><p>Use the plan builder or pick up the phone. No jargon required.</p></li>
+      <li><span class="n">02</span><h3>Get a clear proposal</h3><p>Scope, timeline and pricing in plain English, so you know exactly what you're getting.</p></li>
+      <li><span class="n">03</span><h3>We design and build</h3><p>You review and react. We handle the details, the deadlines and the tech.</p></li>
+      <li><span class="n">04</span><h3>Launch and keep growing</h3><p>Hosting, updates, marketing and support from the same team that built it.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="sec work" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Recent work</p>
+        <h2 class="h2">A few recent <b>launches.</b></h2>
+      </div>
+      <a class="btn btn-line" href="#">See all work <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="work-grid">
+      <a class="proj" href="#">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2026/04/US-Swim-Academies-1108x637.webp" width="1108" height="637" loading="lazy" alt="US Swim Academies website on laptop and phone"></div>
+        <h3>US Swim Academies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+        <p>Web design &amp; development</p>
+      </a>
+      <a class="proj" href="#">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2024/01/Elite-Hardscapes-1108x637.webp" width="1108" height="637" loading="lazy" alt="Elite Hardscapes website on laptop and phone"></div>
+        <h3>Elite Hardscapes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+        <p>Web design &amp; development</p>
+      </a>
+      <a class="proj" href="#">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2026/04/Kalamazoo-Dream-Center-1108x637.webp" width="1108" height="637" loading="lazy" alt="Kalamazoo Dream Center website on laptop and phone"></div>
+        <h3>Kalamazoo Dream Center <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+        <p>Web design &amp; development</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="sec">
+  <div class="wrap voices">
+    <div>
+      <p class="eyebrow">Why our clients love us</p>
+      <blockquote style="margin:0">
+        <p class="easy bigq">“They made the process so <b>easy</b>.”</p>
+        <p class="who"><strong>Holly Cherry</strong>Kneading Relaxation</p>
+      </blockquote>
+    </div>
+    <div class="qs">
+      <blockquote class="q" style="margin:0"><p>“Great, easy people to work with.”</p><footer><b>Jeff Ray</b> · NS Machine</footer></blockquote>
+      <blockquote class="q" style="margin:0"><p>“It's nice to have local people that I can call and talk with any questions.”</p><footer><b>Craig Bradfield</b> · Hand Therapy of Michigan</footer></blockquote>
+      <blockquote class="q" style="margin:0"><p>“Creative Marketing Group has been advising us for over 20 years.”</p><footer><b>Jim Van Tuinen</b> · Van Tuinen Painting</footer></blockquote>
+      <blockquote class="q" style="margin:0"><p>“They revised our website, beautifully and affordably.”</p><footer><b>Melissa Reed</b> · Cultural Tour Consultants</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section class="sec tint" id="insights">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Insights</p>
+        <h2 class="easy h2">We make <b>keeping up</b> easy.</h2>
+      </div>
+      <a class="tlink" href="#">All articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="posts">
+      <a class="post" href="#" style="--c:#522E90"><span class="tag">Development</span><h3>How Custom App Development and API Integration Drive Business Growth</h3><span class="tlink">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="post" href="#" style="--c:#CC3366"><span class="tag">Search &amp; AI</span><h3>Optimizing Web Content for the AI Era with AIO</h3><span class="tlink">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="post" href="#" style="--c:#D9741A"><span class="tag">Case study</span><h3>Rocky Mount Electric Motor Case Study</h3><span class="tlink">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="cta">
+  <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g id="lines2" fill="none" stroke="url(#rb)" stroke-width="1.1"></g></svg>
+  <div class="wrap" style="position:relative">
+    <h2 class="easy on-dark">We make <b>getting started</b> easy.</h2>
+    <p>Answer a few quick questions and get a clear plan from a local team. No pressure and no jargon.</p>
+    <div class="cta-b">
+      <a class="btn btn-white" href="#plan">Build my plan <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="tel:269-324-0040">Call 269-324-0040</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div>
+        <div class="ftr-logos">
+          <img src="https://allegracmg.com/wp-content/uploads/2020/05/cmg-logo-rev.png" width="249" height="76" loading="lazy" alt="Creative Marketing Group">
+          <span></span>
+          <img src="https://allegracmg.com/wp-content/uploads/2024/11/AllegraMPM-rev.webp" width="250" height="39" loading="lazy" alt="Allegra Marketing Print Mail">
+        </div>
+        <address>6054 Lovers Lane<br>Portage, MI 49002<br><a class="tel" href="tel:269-324-0040">269-324-0040</a></address>
+        <p class="ftr-print">Need offline marketing materials? <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Visit Allegra Portage ↗</a></p>
+      </div>
+      <div>
+        <h4>Website Services</h4>
+        <ul><li><a href="#">Website Design</a></li><li><a href="#">Ecommerce Web Design</a></li><li><a href="#">Web Hosting</a></li><li><a href="#">ADA Compliance</a></li><li><a href="#">Systems Integration</a></li><li><a href="#">Marketing Automation</a></li></ul>
+      </div>
+      <div>
+        <h4>Marketing Services</h4>
+        <ul><li><a href="#">Search Engine Optimization</a></li><li><a href="#">Pay-Per-Click Advertising</a></li><li><a href="#">Local Listings</a></li><li><a href="#">Landing Pages</a></li><li><a href="#">Email Marketing</a></li><li><a href="#">Reputation Management</a></li></ul>
+      </div>
+      <div>
+        <h4>Creative &amp; Company</h4>
+        <ul><li><a href="#">Brand Development</a></li><li><a href="#">Graphic Design</a></li><li><a href="#">Content Creation</a></li><li><a href="#work">Portfolio</a></li><li><a href="#insights">News &amp; Insights</a></li><li><a href="#plan">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 Creative Marketing Group</span>
+      <div><a href="#">Privacy</a><a href="#">Accessibility</a><a href="https://www.facebook.com/creativemarketinggroup" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+
+  /* ---------- Mock links: keep "#" links from jumping to the top ---------- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href="#"]');
+    if (a) e.preventDefault();
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var burger = $('#burger'), nav = $('#nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); } });
+
+  /* ---------- Hero ribbon lines ---------- */
+  function drawLines(id, n){
+    var g = document.getElementById(id); if (!g) return;
+    var s = '';
+    for (var i = 0; i < n; i++){
+      var t = i / (n - 1);
+      var y0 = 690 - t * 130, c1 = 330 + t * 300, c2 = 640 - t * 520, y1 = 30 + t * 250;
+      var o = (0.2 + 0.6 * Math.sin(Math.PI * t)).toFixed(2);
+      s += '<path d="M-40 ' + y0.toFixed(1) + ' C 420 ' + c1.toFixed(1) + ', 900 ' + c2.toFixed(1) + ', 1480 ' + y1.toFixed(1) + '" opacity="' + o + '"/>';
+    }
+    g.innerHTML = s;
+  }
+  drawLines('lines', 30);
+  drawLines('lines2', 30);
+
+  /* ---------- "We make (x) easy" rotating word ---------- */
+  (function(){
+    var slot = $('#xslot'); if (!slot) return;
+    var sizer = $('.x-sizer', slot), cur = $('.x-word', slot);
+    var words = ['marketing', 'web', 'SEO', 'branding', 'marketing', 'web', 'hosting', 'design', 'print'];
+    var i = 0;
+    var fit = function(){ slot.style.width = sizer.getBoundingClientRect().width + 'px'; };
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(fit);
+    window.addEventListener('resize', fit);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function next(){
+      i = (i + 1) % words.length;
+      var w = words[i];
+      sizer.textContent = w; fit();
+      var el = document.createElement('b');
+      el.className = 'x-word pre'; el.textContent = w;
+      slot.appendChild(el);
+      var old = cur; cur = el;
+      old.classList.add('out');
+      void el.offsetWidth;
+      el.classList.remove('pre');
+      setTimeout(function(){ old.remove(); }, 550);
+      setTimeout(next, (w === 'marketing' || w === 'web') ? 3200 : 2200);
+    }
+    setTimeout(next, 3000);
+  })();
+
+  /* ---------- Plan builder (decision tree) ---------- */
+  var I = {
+    web:   '<rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.6h.01M10 6.6h.01"/>',
+    grow:  '<path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+    brand: '<path d="m4 20 1-4L16 5l3 3L8 19l-4 1Z"/><path d="m14 7 3 3"/>',
+    auto:  '<rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/><path d="M6.5 10v4.5a3 3 0 0 0 3 3H14"/>',
+    print: '<path d="M7 8V3h10v5"/><path d="M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="7" y="13" width="10" height="8" rx="1"/>',
+    unsure:'<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>',
+    check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    doc:   '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
+    cal:   '<rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/>'
+  };
+  var svg = function(n, cls, sw){ return '<svg' + (cls ? ' class="' + cls + '"' : '') + ' viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (sw || 1.8) + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + I[n] + '</svg>'; };
+
+  // The tree: each need branches into its own follow-up question.
+  var NEEDS = [
+    { id:'web', label:'A website', desc:'New site, redesign or online store', color:'#2C308B', q:'What kind of website help do you need?', general:'Website Services',
+      opts:[['new','A brand-new website','Website Design'],['redo','A redesign of my current site','Website Design'],['shop','An online store','Ecommerce Web Design'],['host','Hosting and ongoing updates','Web Hosting'],['ada','ADA accessibility','ADA Compliance']] },
+    { id:'grow', label:'More customers', desc:'Get found online and bring in leads', color:'#E21C40', q:'Where would you like to grow?', general:'Marketing Services',
+      opts:[['seo','Rank higher on Google','Search Engine Optimization'],['ppc','Run ads that pay off','Pay-Per-Click Advertising'],['local','Show up on maps and local search','Local Listings'],['email','Stay in touch by email','Email Marketing'],['rep','Earn more great reviews','Reputation Management'],['lp','Landing pages for campaigns','Landing Pages']] },
+    { id:'brand', label:'A stronger brand', desc:'Logo, design and content', color:'#CC3366', q:'What would help most?', general:'Creative Services',
+      opts:[['logo','A new logo or brand refresh','Brand Development'],['design','Design for ads, social or print','Graphic Design'],['content','Words and content that sell','Content Creation']] },
+    { id:'auto', label:'Less busywork', desc:'Automation and connected systems', color:'#522E90', q:'What should run itself?', general:'Marketing Automation',
+      opts:[['nurture','Automatic lead follow-up','Marketing Automation'],['crm','Connect my site to my CRM or ERP','Systems Integration'],['app','A custom app or integration','Systems Integration']] },
+    { id:'print', label:'Print, mail & signs', desc:'Produced in-house by Allegra', color:'#F08A24', q:'What do you need produced?', general:'Allegra Print · Mail · Signs',
+      opts:[['print','Business cards, brochures and more','Allegra Print'],['mail','Direct mail','Allegra Direct Mail'],['signs','Signs, banners and displays','Allegra Signs'],['promo','Promotional products','Allegra Promo']] },
+    { id:'unsure', label:'Not sure yet', desc:'Talk it through with a real person', color:'#585C7B', general:'Free strategy conversation', opts:[] }
+  ];
+  var TIMING = [['asap','As soon as possible'],['soon','In the next 1 to 3 months'],['later','Later this year'],['explore','Just exploring for now']];
+  var STEPS = [
+    { k:'Needs',   title:'What can we make easy for you?', hint:'Choose everything that applies.' },
+    { k:'Details', title:'Tell us a little more.',         hint:'Pick anything that sounds right, or skip ahead.' },
+    { k:'Timing',  title:'When would you like to start?',  hint:'A rough idea is plenty.' },
+    { k:'Contact', title:'How should we follow up?',       hint:'Choose a proposal or a meeting, whichever is easier.' }
+  ];
+  var st = { step:1, needs:{}, details:{}, timing:null, site:'', follow:'proposal', form:{}, done:false };
+
+  var body = $('#b-body'), title = $('#b-title'), hint = $('#b-hint'), nextB = $('#b-next'), backB = $('#b-back'), count = $('#b-count');
+  var active = function(){ return NEEDS.filter(function(n){ return st.needs[n.id]; }); };
+  var hasDetails = function(){ return active().some(function(n){ return n.opts.length; }); };
+  var picked = function(n){ return n.opts.filter(function(o){ return st.details[n.id] && st.details[n.id][o[0]]; }); };
+  var timingLabel = function(){ var t = TIMING.filter(function(x){ return x[0] === st.timing; })[0]; return t ? t[1] : ''; };
+
+  function renderStepper(){
+    $('#stepper').innerHTML = STEPS.map(function(s, i){
+      var n = i + 1, cls = st.done || n < st.step ? 'is-done' : (n === st.step ? 'is-current' : '');
+      if (n === 2 && n < st.step && !hasDetails()) cls = 'is-done';
+      return '<li class="' + cls + '"><button type="button" class="st" data-go="' + n + '"' + (cls === 'is-current' ? ' aria-current="step"' : '') + '><i><span>' + n + '</span>' + svg('check', '', 2.6) + '</i><b>' + s.k + '</b></button></li>';
+    }).join('');
+  }
+
+  function renderBody(){
+    var h = '';
+    title.hidden = hint.hidden = st.done;
+    if (st.done){
+      var first = (st.form.name || '').trim().split(/\s+/)[0] || 'there';
+      h = '<div class="done"><div class="done-ic">' + svg('check', '', 2.4) + '</div>' +
+          '<h3 id="done-h" tabindex="-1">Thanks, ' + esc(first) + '. Your plan is on its way.</h3>' +
+          '<p>We\'ll review it and reply to <strong>' + esc(st.form.email || '') + '</strong> within one business day ' +
+          (st.follow === 'proposal' ? 'with next steps on your proposal.' : 'to set up a time to meet.') + '</p>' +
+          '<p class="mock">Mockup only: nothing was actually sent.</p>' +
+          '<button type="button" class="btn btn-ghost" id="b-restart">Start over</button></div>';
+      body.innerHTML = h;
+      return;
+    }
+    var s = STEPS[st.step - 1];
+    title.textContent = s.title; hint.textContent = s.hint;
+
+    if (st.step === 1){
+      h = '<div class="tiles" role="group" aria-labelledby="b-title">' + NEEDS.map(function(n){
+        return '<button type="button" class="tile" style="--c:' + n.color + '" data-need="' + n.id + '" aria-pressed="' + !!st.needs[n.id] + '">' +
+          '<span class="ic">' + svg(n.id) + '</span><span class="tk">' + svg('check', '', 2.8) + '</span>' +
+          '<strong>' + esc(n.label) + '</strong><span class="d">' + esc(n.desc) + '</span></button>';
+      }).join('') + '</div>';
+    }
+    else if (st.step === 2){
+      h = active().filter(function(n){ return n.opts.length; }).map(function(n){
+        return '<fieldset class="grp" style="--c:' + n.color + '"><legend><span class="ic sm">' + svg(n.id) + '</span><span><strong>' + esc(n.label) + '</strong><em>' + esc(n.q) + '</em></span></legend><div class="chips">' +
+          n.opts.map(function(o){
+            var on = !!(st.details[n.id] && st.details[n.id][o[0]]);
+            return '<button type="button" class="chip" data-dneed="' + n.id + '" data-opt="' + o[0] + '" aria-pressed="' + on + '">' + svg('check', '', 3) + '<span>' + esc(o[1]) + '</span></button>';
+          }).join('') + '</div></fieldset>';
+      }).join('');
+      if (st.needs.unsure) h += '<p class="b-note">Not sure about the rest? That\'s fine. We\'ll talk it through with you.</p>';
+    }
+    else if (st.step === 3){
+      h = '<div class="opts" role="radiogroup" aria-labelledby="b-title">' + TIMING.map(function(t){
+        return '<button type="button" role="radio" class="opt" data-timing="' + t[0] + '" aria-checked="' + (st.timing === t[0]) + '"><span class="rd"></span>' + t[1] + '</button>';
+      }).join('') + '</div>' +
+      '<label class="field"><span>Already have a website? <i>(optional)</i></span><input type="text" id="f-site" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" value="' + esc(st.site) + '"></label>';
+    }
+    else {
+      var f = st.form;
+      h = '<div class="follow" role="radiogroup" aria-labelledby="b-title">' +
+        '<button type="button" role="radio" class="fcard" data-follow="proposal" aria-checked="' + (st.follow === 'proposal') + '"><span class="ic sm">' + svg('doc') + '</span><span><strong>Send me a proposal</strong><span class="d">A written plan with scope, timeline and pricing.</span></span><span class="rd"></span></button>' +
+        '<button type="button" role="radio" class="fcard" data-follow="meeting" aria-checked="' + (st.follow === 'meeting') + '"><span class="ic sm" style="--c:#CC3366">' + svg('cal') + '</span><span><strong>Book a meeting</strong><span class="d">In person in Portage, by video or by phone.</span></span><span class="rd"></span></button>' +
+        '</div>' +
+        '<form class="fields" id="b-form" novalidate>' +
+        '<label class="field" data-f="name"><span>Your name</span><input name="name" autocomplete="name" value="' + esc(f.name || '') + '"><span class="msg">Please tell us your name.</span></label>' +
+        '<label class="field"><span>Business or organization <i>(optional)</i></span><input name="company" autocomplete="organization" value="' + esc(f.company || '') + '"></label>' +
+        '<label class="field" data-f="email"><span>Email</span><input name="email" type="email" autocomplete="email" value="' + esc(f.email || '') + '"><span class="msg">Please enter a valid email.</span></label>' +
+        '<label class="field"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel" value="' + esc(f.phone || '') + '"></label>' +
+        '<label class="field wide" id="f-meet"' + (st.follow === 'meeting' ? '' : ' hidden') + '><span>How would you like to meet?</span><select name="meet"><option>At your office in Portage</option><option>Video call</option><option>Phone call</option></select></label>' +
+        '<label class="field wide"><span>Anything else we should know? <i>(optional)</i></span><textarea name="notes" rows="2">' + esc(f.notes || '') + '</textarea></label>' +
+        '</form>';
+    }
+    body.innerHTML = h;
+    body.style.animation = 'none'; void body.offsetWidth; body.style.animation = '';
+  }
+
+  function renderFoot(){
+    $('#b-foot').hidden = st.done;
+    backB.hidden = st.step === 1;
+    count.textContent = 'Step ' + st.step + ' of 4';
+    var label = 'Continue', ok = true;
+    if (st.step === 1) ok = active().length > 0;
+    if (st.step === 2 && !active().some(function(n){ return picked(n).length; })) label = 'Skip this step';
+    if (st.step === 3) ok = !!st.timing;
+    if (st.step === 4) label = st.follow === 'proposal' ? 'Request my proposal' : 'Request a meeting';
+    nextB.innerHTML = label + ' ' + svg('arrow', 'arr', 2.2);
+    nextB.disabled = !ok;
+  }
+
+  function renderPlan(){
+    var tree = $('#plan-tree'), recs = $('#plan-recs'), act = active();
+    if (!act.length){
+      tree.innerHTML = '<ul class="tree"><li><span class="root">Your project</span><ul><li><span class="ghost" style="width:150px"></span></li><li><span class="ghost" style="width:190px"></span></li><li><span class="ghost" style="width:120px"></span></li></ul></li></ul>' +
+        '<p class="plan-empty">Pick what you need and your plan takes shape here.</p>';
+      recs.hidden = true; return;
+    }
+    var h = '<ul class="tree"><li><span class="root">Your project</span><ul>', list = [];
+    act.forEach(function(n){
+      var p = picked(n);
+      h += '<li><span class="node" style="--c:' + n.color + '"><i></i>' + esc(n.label) + '</span>';
+      if (p.length) h += '<ul>' + p.map(function(o){ return '<li><span class="leaf">' + esc(o[1]) + '</span></li>'; }).join('') + '</ul>';
+      h += '</li>';
+      (p.length ? p.map(function(o){ return o[2]; }) : [n.general]).forEach(function(x){ if (list.indexOf(x) < 0) list.push(x); });
+    });
+    if (st.timing) h += '<li><span class="node meta"><i></i>Start: ' + esc(timingLabel().toLowerCase()) + '</span></li>';
+    if (st.step === 4 || st.done) h += '<li><span class="node meta"><i></i>Next: ' + (st.follow === 'proposal' ? 'written proposal' : 'meeting') + '</span></li>';
+    h += '</ul></li></ul>';
+    tree.innerHTML = h;
+    recs.hidden = false;
+    recs.innerHTML = '<h4>What we\'d include</h4><div>' + list.map(function(x){ return '<a class="rec" href="#">' + esc(x) + '</a>'; }).join('') + '</div>';
+  }
+
+  function render(focus){
+    renderStepper(); renderBody(); renderFoot(); renderPlan();
+    if (!focus) return;
+    (st.done ? $('#done-h') : title).focus({ preventScroll:true });
+    // Keep the top of the builder in view when a step changes height.
+    var top = $('.builder').getBoundingClientRect().top;
+    if (top < 90) window.scrollTo({ top: window.scrollY + top - 100, behavior:'smooth' });
+  }
+
+  body.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.need){
+      var id = b.dataset.need;
+      if (st.needs[id]) { delete st.needs[id]; delete st.details[id]; } else st.needs[id] = true;
+      b.setAttribute('aria-pressed', !!st.needs[id]);
+      renderFoot(); renderPlan();
+    } else if (b.dataset.opt){
+      var d = st.details[b.dataset.dneed] || (st.details[b.dataset.dneed] = {});
+      if (d[b.dataset.opt]) delete d[b.dataset.opt]; else d[b.dataset.opt] = true;
+      b.setAttribute('aria-pressed', !!d[b.dataset.opt]);
+      renderFoot(); renderPlan();
+    } else if (b.dataset.timing){
+      st.timing = b.dataset.timing;
+      $$('[data-timing]', body).forEach(function(x){ x.setAttribute('aria-checked', x === b); });
+      renderFoot(); renderPlan();
+    } else if (b.dataset.follow){
+      st.follow = b.dataset.follow;
+      $$('[data-follow]', body).forEach(function(x){ x.setAttribute('aria-checked', x === b); });
+      $('#f-meet').hidden = st.follow !== 'meeting';
+      renderFoot(); renderPlan();
+    } else if (b.id === 'b-restart'){
+      st = { step:1, needs:{}, details:{}, timing:null, site:'', follow:'proposal', form:{}, done:false };
+      render(true);
+    }
+  });
+  body.addEventListener('input', function(e){
+    var t = e.target;
+    if (t.id === 'f-site') st.site = t.value;
+    else if (t.name) { st.form[t.name] = t.value; var w = t.closest('.field'); if (w) w.classList.remove('err'); }
+  });
+  body.addEventListener('submit', function(e){ e.preventDefault(); nextB.click(); });
+
+  nextB.addEventListener('click', function(){
+    if (st.step === 1) st.step = hasDetails() ? 2 : 3;
+    else if (st.step < 4) st.step++;
+    else {
+      var okName = (st.form.name || '').trim().length > 1;
+      var okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((st.form.email || '').trim());
+      $('[data-f="name"]', body).classList.toggle('err', !okName);
+      $('[data-f="email"]', body).classList.toggle('err', !okMail);
+      if (!okName || !okMail) { $(okName ? '[data-f="email"] input' : '[data-f="name"] input', body).focus(); return; }
+      st.done = true;
+    }
+    render(true);
+  });
+  backB.addEventListener('click', function(){
+    st.step = (st.step === 3 && !hasDetails()) ? 1 : st.step - 1;
+    render(true);
+  });
+  $('#stepper').addEventListener('click', function(e){
+    var b = e.target.closest('[data-go]'); if (!b || st.done) return;
+    var n = +b.dataset.go;
+    if (n >= st.step || (n === 2 && !hasDetails())) return;
+    st.step = n; render(true);
+  });
+
+  // "Plan my website" style buttons jump into the tree with that branch already chosen.
+  $$('[data-plan]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (st.done) st = { step:1, needs:{}, details:{}, timing:null, site:'', follow:'proposal', form:{}, done:false };
+      st.needs[a.dataset.plan] = true;
+      st.step = 2;
+      render(false);
+    });
+  });
+
+  render(false);
+})();
+</script>
+</body>
+</html>
