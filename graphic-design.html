@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Graphic Design | Creative Marketing Group (page mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Raleway:wght@300;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokens (shared with homepage) ---------- */
+:root{
+  --indigo-950:#101233; --indigo-900:#171A4D; --indigo-800:#1F2268;
+  --indigo:#2C308B;            /* CMG brand indigo */
+  --indigo-300:#A9ACDD; --indigo-100:#E3E4F3; --indigo-50:#F4F5FB;
+  --red:#E21C40;               /* CMG brand red */
+  --red-btn:#D7183A;
+  --purple:#522E90;            /* Allegra purple */
+  --magenta:#CC3366;           /* Allegra magenta */
+  --orange:#F08A24;            /* Allegra orange */
+  --ink:#1A1C3A; --slate:#585C7B; --line:#E2E4EF; --line-2:#C9CCE0;
+  --ribbon:linear-gradient(90deg,#2C308B,#522E90 30%,#CC3366 58%,#E21C40 78%,#F08A24);
+  --ribbon-lite:linear-gradient(90deg,#9A97F5,#C86BD0 35%,#F0527A 66%,#F9A03F);
+  --display:"Raleway","Plus Jakarta Sans",sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+/* ---------- Base (shared) ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:3px solid #7C7FF0;outline-offset:2px;border-radius:6px}
+section{position:relative}
+.sec{padding:120px 0}
+.tint{background:var(--indigo-50)}
+svg.i{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* The tagline system: light frame, bold fill-in word, ribbon underline */
+.easy{font-family:var(--display);font-weight:300;letter-spacing:-.015em;line-height:1.06;color:var(--indigo)}
+.easy b{font-weight:800;white-space:nowrap;padding-bottom:.05em;background:var(--ribbon) no-repeat 0 100%/100% .07em}
+.easy.on-dark{color:#fff}
+.easy.on-dark b{background-image:var(--ribbon-lite)}
+.h2{font-size:clamp(36px,4.7vw,60px)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
+.lead{font-size:19px;color:var(--slate);max-width:56ch}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head .lead{max-width:32ch;text-wrap:balance}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15.5px;line-height:1;padding:16px 22px;border-radius:12px;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-red{background:var(--red-btn);color:#fff}
+.btn-red:hover{background:#BC1130}
+.btn-ghost{background:#fff;border-color:var(--line-2);color:var(--indigo)}
+.btn-ghost:hover{border-color:var(--indigo)}
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;color:var(--indigo);text-decoration:none}
+.tlink svg{width:17px;height:17px;transition:transform .18s}
+.tlink:hover{color:var(--red)}
+.tlink:hover svg{transform:translateX(3px)}
+
+/* ---------- Utility bar + header (shared) ---------- */
+.util{background:var(--indigo-950);color:#C9CBE8;font-size:13.5px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:40px}
+.util a{color:#fff;text-decoration:none;font-weight:600}
+.util a:hover{text-decoration:underline}
+.util-r{display:flex;gap:24px;align-items:center}
+.util-r svg{width:13px;height:13px;vertical-align:-1px;margin-left:3px}
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:80px}
+.logo img{height:42px;width:auto}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav>li{position:relative}
+.nav-l{position:relative;display:flex;align-items:center;gap:6px;padding:10px 13px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;background:none;border:0;cursor:pointer}
+.nav-l svg{width:14px;height:14px;opacity:.55}
+.nav-l:hover,.nav>li:focus-within>.nav-l{background:var(--indigo-50);color:var(--indigo)}
+.nav-l.is-cur{color:var(--indigo)}
+.nav-l.is-cur::after{content:"";position:absolute;left:13px;right:13px;bottom:3px;height:2.5px;border-radius:2px;background:var(--ribbon)}
+.menu{position:absolute;top:calc(100% + 10px);left:-14px;width:330px;background:#fff;border-radius:18px;padding:12px;box-shadow:0 24px 60px -18px rgba(16,18,51,.35),0 0 0 1px var(--line);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .16s,transform .16s,visibility .16s}
+.menu::before{content:"";position:absolute;inset:-12px 0 auto;height:12px}
+.nav>li:hover .menu,.nav>li:focus-within .menu{opacity:1;visibility:visible;transform:none}
+.menu-h{font-size:21px;padding:8px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.menu a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14.5px;line-height:1.35}
+.menu a span{display:block;font-weight:400;font-size:13px;color:var(--slate)}
+.menu a:hover,.menu a[aria-current]{background:var(--indigo-50);color:var(--indigo)}
+.hdr-tel{font-weight:700;color:var(--red);text-decoration:none;font-size:15.5px;white-space:nowrap}
+.hdr .btn{padding:13px 18px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;cursor:pointer;place-items:center}
+.burger svg{width:22px;height:22px}
+
+/* ---------- Interior hero (shared pattern) ---------- */
+.hero{background:linear-gradient(150deg,#15174A 0%,#2C308B 56%,#47309A 100%);color:#fff;padding:26px 0 178px;overflow:hidden}
+.hero-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.crumbs{position:relative}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:8px;font-size:13.5px;color:#A9ACDD}
+.crumbs li{display:flex;align-items:center;gap:8px}
+.crumbs li+li::before{content:"/";opacity:.55}
+.crumbs a{color:#C9CBE8;text-decoration:none}
+.crumbs a:hover{color:#fff;text-decoration:underline}
+.crumbs [aria-current]{color:#fff;font-weight:600}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:60px;align-items:center;padding-top:54px}
+.hero .eyebrow{color:#C9CBE8;display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.hero .eyebrow::before{content:"";width:44px;height:3px;border-radius:9px;background:var(--ribbon-lite)}
+.tagline{font-size:clamp(46px,6.3vw,82px);line-height:1.04}
+.hero-lead{font-size:18.5px;line-height:1.6;color:#DCDDF3;max-width:50ch;margin-top:28px}
+.hero-lead strong{color:#fff;font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+/* Hero visual: real logo work, laid out as a staggered wall */
+.hero-work{position:relative}
+.hero-work::before{content:"";position:absolute;inset:-6% -8% 8%;background:radial-gradient(closest-side,rgba(154,151,245,.34),transparent 72%);pointer-events:none}
+.mosaic{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:500px;margin-left:auto;padding:16px 0 50px}
+.mosaic li{aspect-ratio:1;border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 30px 40px -24px rgba(8,9,30,.75)}
+.mosaic li:nth-child(3n+1){transform:translateY(30px)}
+.mosaic li:nth-child(3n+2){transform:translateY(-12px)}
+.mosaic li:nth-child(3n){transform:translateY(48px)}
+.mosaic img{width:100%;height:100%;object-fit:contain}
+.hero-work figcaption{position:relative;max-width:500px;margin-left:auto;font-size:13.5px;color:#C9CBE8;display:flex;justify-content:space-between;gap:16px}
+.hero-work figcaption b{color:#fff;font-weight:600}
+
+/* ---------- Fact bar (shared pattern) ---------- */
+.facts-sec{margin-top:-96px;z-index:2}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:24px;padding:36px 10px;box-shadow:0 40px 90px -30px rgba(16,18,51,.5),0 0 0 1px rgba(16,18,51,.06)}
+.facts li{padding:2px 30px;border-left:1px solid var(--line)}
+.facts li:first-child{border-left:0}
+.facts strong{display:block;font-family:var(--display);font-weight:300;font-size:clamp(30px,3.1vw,40px);line-height:1.1;color:var(--indigo);font-feature-settings:"lnum" 1;letter-spacing:-.01em;white-space:nowrap}
+.facts span{display:block;color:var(--slate);font-size:15px;line-height:1.45;margin-top:8px;text-wrap:balance}
+
+/* ---------- Brand board: one sample brand across seven formats ---------- */
+.feelbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.feelbar-l{font-size:14px;font-weight:700;margin-right:8px}
+.feel{display:inline-flex;align-items:center;gap:9px;padding:10px 16px 10px 12px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:14.5px;font-weight:600;cursor:pointer;transition:.15s}
+.feel i{width:14px;height:14px;border-radius:50%;background:var(--sw);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.feel:hover{border-color:var(--indigo-300)}
+.feel[aria-pressed=true]{border-color:var(--indigo);background:var(--indigo-50);color:var(--indigo);box-shadow:inset 0 0 0 1px var(--indigo)}
+
+.board{
+  /* "Modern and professional" is the default feel */
+  --f1:#2C308B;--f2:#A9A6F7;--on1:#fff;--paper:#fff;--b-ink:#1A1C3A;--acc:#2C308B;--mute:#E3E4F3;--desk:#ECEEF9;--tag:#585C7B;--dot-p:#F08A24;--dot-s:#2C308B;
+  --r:5px;--mk-r:7px;--mk-t:none;--mk-ring:0 0 0 0 transparent;--b-font:var(--display);--fw:800;--ls:.05em;--tt:uppercase;
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+  grid-template-areas:
+    "logo logo logo card card card card broc broc broc mail mail"
+    "post post post post ad ad ad broc broc broc mail mail"
+    "sign sign sign sign sign sign sign sign sign sign sign sign"
+    "foot foot foot foot foot foot foot foot foot foot foot foot";
+  gap:36px 28px;padding:46px 46px 30px;border-radius:28px;background:var(--desk);transition:background-color .45s}
+.board[data-feel=friendly]{--f1:#E5702A;--f2:#FFCB7D;--on1:#fff;--paper:#FFFCF6;--b-ink:#44270F;--acc:#C85A18;--mute:#F5E2CB;--desk:#FFEFDB;--tag:#7A5A3C;
+  --r:16px;--mk-r:50%;--b-font:var(--body);--fw:800;--ls:-.02em;--tt:none}
+.board[data-feel=classic]{--f1:#1E4D40;--f2:#CDA85F;--on1:#F8F2E4;--paper:#FCF9F1;--b-ink:#1F2A26;--acc:#8A6A28;--mute:#E6E0D0;--desk:#ECE9DD;--tag:#5B6259;
+  --r:2px;--mk-r:50%;--mk-ring:inset 0 0 0 2px var(--f2);--b-font:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--fw:700;--ls:.005em;--tt:none}
+.board[data-feel=bold]{--f1:#E0245E;--f2:#FFD84A;--on1:#fff;--paper:#1C1A33;--b-ink:#fff;--acc:#FFD84A;--mute:#383560;--desk:#0E0D1F;--tag:#B9B6DA;--dot-p:#F9A03F;--dot-s:#9A97F5;
+  --r:0px;--mk-r:0px;--mk-t:skewX(-10deg);--b-font:var(--body);--fw:800;--ls:-.035em;--tt:uppercase}
+.board *{transition:background-color .45s,color .45s,border-radius .45s,border-color .45s,box-shadow .45s}
+.cell{display:flex;flex-direction:column;align-items:center;gap:16px;min-width:0}
+.cell-in{flex:1;width:100%;display:grid;place-items:center}
+.cell-tag{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tag);white-space:nowrap}
+.cell-tag i{width:8px;height:8px;border-radius:50%}
+.dp{background:var(--dot-p)}.ds{background:var(--dot-s)}
+.piece{box-shadow:0 22px 40px -24px rgba(16,18,51,.55),0 0 0 1px rgba(16,18,51,.07)}
+/* Shared brand parts */
+.mk{flex:none;display:grid;place-items:center;width:1.7em;height:1.7em;border-radius:var(--mk-r);background:var(--f1);color:var(--on1);box-shadow:var(--mk-ring);transform:var(--mk-t);font-family:var(--b-font);font-weight:var(--fw);line-height:1}
+.mk.inv{background:var(--on1);color:var(--f1)}
+.wm,.hd{font-family:var(--b-font);font-weight:var(--fw);letter-spacing:var(--ls);text-transform:var(--tt);color:var(--b-ink);line-height:1.12}
+.ln{display:block;height:5px;border-radius:9px;background:var(--mute)}
+.cta{align-self:flex-start;font-size:10px;font-weight:700;line-height:1;color:var(--on1);background:var(--f1);border-radius:min(var(--r),8px);padding:7px 10px;white-space:nowrap}
+.cta.inv{background:var(--on1);color:var(--f1)}
+.art-img{background:radial-gradient(circle at 76% 32%,var(--f2) 0 19%,transparent 20%),linear-gradient(to top right,var(--f1) 0 46%,transparent 46.4%),var(--mute)}
+/* Logo */
+.pc-logo{width:100%;max-width:214px;aspect-ratio:1;background:var(--paper);border-radius:calc(var(--r) + 6px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:34px;text-align:center}
+.pc-logo .wm{font-size:19px;margin-top:8px}
+.tl{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--acc)}
+/* Business cards */
+.pc-cards{position:relative;width:100%;max-width:306px;aspect-ratio:306/200}
+.bc{position:absolute;width:74%;aspect-ratio:7/4;border-radius:var(--r)}
+.bc-back{left:0;top:2%;background:var(--f1);padding:7% 8%;font-size:24px;transform:rotate(-6deg)}
+.bc-front{right:0;bottom:0;background:var(--paper);padding:8% 8%;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.bc-id{display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:auto}
+.bc-id .wm{font-size:13px}
+/* Brochure */
+.pc-broc{width:100%;max-width:236px;background:var(--paper);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;padding-bottom:18px}
+.br-top{display:flex;align-items:center;gap:8px;background:var(--f1);padding:12px 14px;font-size:11px}
+.br-top .wm{color:var(--on1);font-size:12px}
+.br-img{height:150px}
+.pc-broc .hd{font-size:17px;padding:16px 16px 6px}
+.pc-broc .ln{margin:7px 16px 0}
+.pc-broc .cta{margin:16px 16px 0}
+.br-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 16px 0;padding-top:14px;border-top:1px solid var(--mute)}
+.br-cols .ln{margin:0 0 6px}
+/* Email */
+.pc-mail{width:100%;max-width:164px;background:var(--paper);border-radius:10px;overflow:hidden;padding-bottom:14px;display:flex;flex-direction:column}
+.ml-bar{display:flex;gap:4px;padding:8px 10px;background:var(--mute)}
+.ml-bar i{width:6px;height:6px;border-radius:50%;background:var(--tag);opacity:.45}
+.ml-head{display:flex;align-items:center;gap:8px;padding:11px 12px;font-size:10px}
+.ml-head .ln{flex:1;max-width:60px}
+.ml-hero{margin:0 10px;padding:18px 12px;background:var(--f1);border-radius:var(--r)}
+.ml-hero .hd{color:var(--on1);font-size:14px}
+.pc-mail>.ln{margin:8px 12px 0}
+.ml-img{height:54px;margin:12px 10px 2px;border-radius:var(--r)}
+.pc-mail .cta{margin:12px 12px 0}
+/* Postcard */
+.pc-post{width:100%;max-width:336px;aspect-ratio:336/196;display:grid;grid-template-columns:58% 42%;background:var(--paper);border-radius:var(--r);overflow:hidden}
+.po-art{display:flex;align-items:flex-end;padding:14px;background:radial-gradient(circle at 72% 27%,var(--f2) 0 17%,transparent 18%),linear-gradient(to top,var(--f1) 0 52%,transparent 52%),var(--mute)}
+.po-art .hd{color:var(--on1);font-size:16px;max-width:8.5em}
+.po-back{position:relative;padding:14px 14px 14px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;border-left:1px dashed var(--mute)}
+.po-stamp{position:absolute;top:12px;right:12px;width:26px;height:30px;border:1.5px dashed var(--tag);border-radius:3px;opacity:.55}
+.po-back .mk{font-size:11px;margin-bottom:auto}
+/* Digital ad */
+.pc-ad{width:100%;max-width:196px;aspect-ratio:1;background:var(--f1);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;font-size:13px}
+.pc-ad .hd{color:var(--on1);font-size:20px}
+/* Banner */
+.pc-sign{position:relative;width:100%;height:96px;background:var(--f1);border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:18px;font-size:24px;padding:0 30px}
+.pc-sign .wm{color:var(--on1);font-size:clamp(22px,2.6vw,32px);white-space:nowrap}
+.sg-pill{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1A1C3A;background:var(--f2);border-radius:min(var(--r),99px);padding:8px 12px;white-space:nowrap}
+.gr{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--desk);box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.22)}
+.gr:nth-of-type(1){left:12px;top:12px}.gr:nth-of-type(2){right:12px;top:12px}.gr:nth-of-type(3){left:12px;bottom:12px}.gr:nth-of-type(4){right:12px;bottom:12px}
+.board-foot{grid-area:foot;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--tag);padding-top:4px}
+.board-foot div{display:flex;gap:18px}
+.board-foot span{display:flex;align-items:center;gap:7px}
+.board-foot i{width:9px;height:9px;border-radius:50%}
+
+/* ---------- What we design ---------- */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+/* Subgrid keeps the icon, title, text and list rows lined up across the three cards */
+.svc-card{display:grid;grid-template-rows:subgrid;grid-row:span 4;row-gap:0;justify-items:start;align-content:start;background:#fff;border-radius:24px;padding:34px 30px 32px;box-shadow:0 0 0 1px var(--line)}
+.ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 11%,#fff);color:var(--c);margin-bottom:24px}
+.ic svg{width:24px;height:24px;stroke-width:1.8}
+.svc-card h3{font-size:22px;line-height:1.25;letter-spacing:-.01em}
+.svc-card p{color:var(--slate);font-size:16px;margin-top:10px}
+.svc-card ul{width:100%;margin-top:22px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:10px;align-content:start}
+.svc-card li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4}
+.svc-card li svg{flex:none;width:18px;height:18px;margin-top:1px;color:var(--c);stroke-width:2.6}
+
+/* ---------- Press-ready (the print tie-in) ---------- */
+.press{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;border-radius:28px;padding:68px 64px;color:#fff;background:linear-gradient(150deg,#5B33A0,#3F2378)}
+.press::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ribbon-lite)}
+.press .al{height:30px;width:auto;margin-bottom:28px}
+.press .easy{font-size:clamp(34px,4.3vw,56px)}
+.press-p{color:#DDD3F1;font-size:18px;max-width:46ch;margin-top:20px}
+.ticks{display:grid;gap:13px;margin:26px 0 30px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.ticks svg{flex:none;width:22px;height:22px;margin-top:2px;color:#F9A03F;stroke-width:2.6}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.tags a{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;text-decoration:none;color:#fff;border:1.5px solid rgba(255,255,255,.28);border-radius:99px;padding:8px 14px;transition:.15s}
+.tags a:hover{border-color:#fff}
+.tags i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.press .tlink{color:#fff}
+.press .tlink:hover{color:#FFD9A8}
+/* Proof sheet */
+.sheet{position:relative;background:#fff;color:var(--ink);border-radius:16px;padding:60px 60px 84px;box-shadow:0 40px 70px -34px rgba(10,5,30,.85)}
+.art{position:relative;aspect-ratio:3/2;background:linear-gradient(135deg,#2C308B,#522E90 38%,#CC3366 72%,#F08A24);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:7% 8%}
+.art-top{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}
+.art-top i{width:26px;height:26px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;font-style:normal;font-family:var(--display);font-weight:800;font-size:14px}
+.art-h{font-family:var(--display);font-weight:300;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-.015em}
+.art-h b{font-weight:800;display:block}
+.art-f{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.bleed{position:absolute;inset:-11px;border:1.5px dashed var(--magenta);pointer-events:none}
+.crop{position:absolute;width:0;height:0}
+.crop::before,.crop::after{content:"";position:absolute;background:var(--ink)}
+.crop::before{width:1.5px;height:16px}
+.crop::after{height:1.5px;width:16px}
+.crop.tl{left:0;top:0}.crop.tl::before{left:0;top:-36px}.crop.tl::after{top:0;left:-36px}
+.crop.tr{right:0;top:0}.crop.tr::before{right:0;top:-36px}.crop.tr::after{top:0;right:-36px}
+.crop.bl{left:0;bottom:0}.crop.bl::before{left:0;bottom:-36px}.crop.bl::after{bottom:0;left:-36px}
+.crop.br{right:0;bottom:0}.crop.br::before{right:0;bottom:-36px}.crop.br::after{bottom:0;right:-36px}
+.note{position:absolute;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1;white-space:nowrap}
+.note.n-bleed{right:-2px;top:-30px;color:var(--magenta)}
+.note.n-trim{left:26px;top:-30px;color:var(--slate)}
+.cbar{position:absolute;left:60px;bottom:30px;display:flex;align-items:center;gap:3px}
+.cbar i{width:15px;height:15px;background:var(--c)}
+.cbar svg{width:20px;height:20px;margin-left:10px;color:var(--ink);stroke-width:1.4}
+.stamp{position:absolute;right:38px;bottom:24px;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1E7D50;border:2px solid currentColor;border-radius:8px;padding:7px 11px;transform:rotate(-5deg)}
+.stamp svg{width:15px;height:15px;stroke-width:3}
+
+/* ---------- Process (shared) ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;padding-top:34px}
+.steps::before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;border-radius:3px;background:var(--ribbon)}
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;top:-34px;left:0;width:19px;height:19px;border-radius:50%;background:var(--indigo-50);border:3px solid var(--indigo)}
+.steps li:nth-child(2)::before{border-color:var(--purple)}
+.steps li:nth-child(3)::before{border-color:var(--magenta)}
+.steps li:nth-child(4)::before{border-color:var(--orange)}
+.steps .n{font-family:var(--display);font-weight:300;font-size:52px;line-height:1;color:var(--indigo);font-feature-settings:"lnum" 1}
+.steps h3{font-size:19px;line-height:1.3;margin:14px 0 8px}
+.steps p{font-size:15.5px;color:var(--slate)}
+
+/* ---------- Work: logo wall ---------- */
+.work{background:var(--indigo-950);color:#fff}
+.work .eyebrow{color:#F9A03F}
+.work h2{font-family:var(--display);font-weight:300;letter-spacing:-.015em;line-height:1.08}
+.work h2 b{font-weight:800}
+.wall{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:34px 20px}
+.wall figure{aspect-ratio:1;border-radius:20px;background:#fff;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.wall li:hover figure{transform:translateY(-5px)}
+.wall img{width:100%;height:100%;object-fit:contain}
+.wall p{font-size:14px;line-height:1.35;color:var(--indigo-300);margin-top:12px;text-align:center;text-wrap:balance}
+
+/* ---------- Testimonials (shared) ---------- */
+.voices{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:76px;align-items:center}
+.bigq{font-size:clamp(38px,5vw,66px);line-height:1.08}
+.who{margin-top:26px;font-size:16px;color:var(--slate)}
+.who strong{color:var(--ink);display:block;font-size:17px}
+.qs{display:grid;gap:14px}
+.q{border:1.5px solid var(--line);border-radius:18px;padding:22px 24px;background:#fff}
+.q p{font-size:17px;line-height:1.5;font-weight:500}
+.q footer{margin-top:10px;font-size:14.5px;color:var(--slate)}
+.q footer b{color:var(--ink);font-weight:700}
+
+/* ---------- What's next (homepage card pattern) ---------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{display:flex;flex-direction:column;background:#fff;border-radius:22px;padding:30px;text-decoration:none;min-height:230px;box-shadow:0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.post:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--indigo-300),0 24px 40px -28px rgba(44,48,139,.5)}
+.post .tag{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--indigo));display:flex;align-items:center;gap:8px}
+.post .tag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.post h3{font-size:23px;line-height:1.25;letter-spacing:-.01em;margin:16px 0 8px}
+.post p{color:var(--slate);font-size:16px;margin-bottom:24px}
+.post .tlink{margin-top:auto}
+
+/* ---------- FAQ (shared) ---------- */
+.faq{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:76px;align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side .lead{margin:20px 0 26px;font-size:17.5px}
+.qa{border-bottom:1px solid var(--line-2)}
+.qa:first-child{border-top:1px solid var(--line-2)}
+.qa summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-size:18.5px;font-weight:600;line-height:1.35;cursor:pointer;list-style:none;transition:color .15s}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--indigo)}
+.pm{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line-2);background:#fff;display:grid;place-items:center;color:var(--indigo);transition:.2s}
+.pm svg{width:14px;height:14px;stroke-width:2.6}
+.qa[open] .pm{background:var(--indigo);border-color:var(--indigo);color:#fff;transform:rotate(45deg)}
+.ans{padding:0 56px 26px 4px;color:var(--slate);font-size:16.5px}
+.ans p+p{margin-top:12px}
+
+/* ---------- Consultation (shared) ---------- */
+.consult{background:linear-gradient(150deg,#15174A 0%,#2C308B 60%,#47309A 100%);color:#fff;overflow:hidden;padding:120px 0}
+.consult-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:72px;align-items:center}
+.consult .easy{font-size:clamp(40px,5.4vw,70px)}
+.consult-lead{font-size:19px;color:#DCDDF3;max-width:44ch;margin:24px 0 4px}
+.consult-tel{font-size:15.5px;color:#C9CBE8}
+.consult-tel a{color:#fff;font-weight:700;text-decoration:none;white-space:nowrap}
+.consult-tel a:hover{text-decoration:underline}
+.form-card{background:#fff;color:var(--ink);border-radius:24px;padding:34px 34px 30px;box-shadow:0 40px 90px -30px rgba(8,9,30,.75)}
+.form-card h3{font-size:25px;line-height:1.2;letter-spacing:-.015em}
+.form-sub{color:var(--slate);font-size:15.5px;margin:6px 0 22px}
+.grp{border:0;padding:0;margin:0 0 18px}
+.grp legend{padding:0;font-size:13.5px;font-weight:600;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px 9px 11px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:14.5px;font-weight:600;cursor:pointer;transition:.15s}
+.chip svg{width:16px;height:16px;padding:2px;border-radius:50%;border:1.5px solid var(--line-2);color:transparent;box-sizing:content-box;stroke-width:3}
+.chip:hover{border-color:var(--indigo-300)}
+.chip:has(input:checked){border-color:var(--indigo);background:var(--indigo-50);color:var(--indigo)}
+.chip:has(input:checked) svg{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.chip:has(input:focus-visible){outline:3px solid #7C7FF0;outline-offset:2px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.field{display:block}
+.field>span{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+.field i{font-style:normal;font-weight:400;color:var(--slate)}
+.field input,.field select{width:100%;padding:12px 14px;border-radius:11px;border:1.5px solid var(--line-2);background:#fff;font-size:15.5px;transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 4px var(--indigo-100)}
+.field.err input{border-color:var(--red)}
+.field .msg{display:none;font-size:13px;color:var(--red-btn);margin-top:4px;font-weight:500}
+.field.err .msg{display:block}
+/* Print add-on: the Allegra tie-in inside the form */
+.addon{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);cursor:pointer;transition:.15s}
+.addon:hover{border-color:#C7B5E6}
+.addon:has(input:checked){border-color:var(--purple);background:#F6F1FC}
+.addon:has(input:focus-visible){outline:3px solid #7C7FF0;outline-offset:2px}
+.addon svg{flex:none;width:18px;height:18px;padding:3px;border-radius:7px;border:1.5px solid var(--line-2);color:transparent;box-sizing:content-box;stroke-width:3}
+.addon:has(input:checked) svg{background:var(--purple);border-color:var(--purple);color:#fff}
+.addon strong{display:block;font-size:15px;line-height:1.3}
+.addon span span{display:block;font-size:13.5px;color:var(--slate)}
+.form-card form .btn{width:100%;margin-top:18px}
+.fine{font-size:13px;color:var(--slate);margin-top:14px;text-align:center}
+.fine a{color:var(--indigo);font-weight:600}
+.done{text-align:center;padding:34px 0 20px}
+.done-ic{width:72px;height:72px;border-radius:50%;margin:0 auto 24px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#522E90,#CC3366 55%,#F08A24)}
+.done-ic svg{width:34px;height:34px}
+.done h3{font-size:28px;margin-bottom:12px}
+.done h3:focus{outline:none}
+.done p{color:var(--slate)}
+.done .mock{font-size:13px;width:fit-content;margin:20px auto 24px;padding:8px 12px;border-radius:10px;background:var(--indigo-50)}
+
+/* ---------- Footer (shared) ---------- */
+.ftr{background:var(--indigo-950);color:#C9CBE8;padding:76px 0 30px;font-size:15px;border-top:1px solid rgba(255,255,255,.1)}
+.ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+.ftr-logos{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.ftr-logos img:first-child{height:50px;width:auto}
+.ftr-logos img:last-child{height:26px;width:auto}
+.ftr-logos span{width:1px;height:40px;background:rgba(255,255,255,.25)}
+.ftr address{font-style:normal;line-height:1.7}
+.ftr a{text-decoration:none}
+.ftr a:hover,.ftr a[aria-current]{color:#fff}
+.ftr .tel{color:#fff;font-weight:700;font-size:18px}
+.ftr h4{color:#fff;font-size:15px;margin:0 0 16px}
+.ftr li{margin-bottom:9px}
+.ftr-print{margin-top:22px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.06);max-width:330px}
+.ftr-print a{color:#fff;font-weight:600}
+.ftr-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px}
+.ftr-bot div{display:flex;gap:22px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .nav,.hdr-tel{display:none}
+  .burger{display:grid}
+  .hdr .btn{display:none}
+  .nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:100%;left:0;right:0;background:#fff;padding:12px 24px 20px;border-bottom:1px solid var(--line);box-shadow:0 30px 40px -30px rgba(16,18,51,.4);margin:0}
+  .nav.open .menu{display:none}
+  .nav.open .nav-l{width:100%;padding:14px 4px;font-size:17px;border-bottom:1px solid var(--line);border-radius:0}
+  .nav.open .nav-l svg,.nav.open .nav-l.is-cur::after{display:none}
+  .hero-grid{gap:44px}
+  .facts li{padding:2px 20px}
+  .board{padding:36px 30px 26px;gap:32px 20px}
+  .press{padding:52px 44px;gap:44px}
+  .sheet{padding:54px 48px 78px}
+  .cbar{left:48px}
+  .wall{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .consult-grid{gap:48px}
+}
+@media (max-width:900px){
+  .sec,.consult{padding:84px 0}
+  .hero{padding-bottom:150px}
+  .hero-grid{grid-template-columns:1fr;padding-top:40px}
+  .mosaic,.hero-work figcaption{margin-left:0;max-width:440px}
+  .facts{grid-template-columns:1fr 1fr;gap:26px 0;padding:28px 6px}
+  .facts li:nth-child(3){border-left:0}
+  .board{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"logo ad" "card card" "broc mail" "post post" "sign sign" "foot foot"}
+  .svc,.press,.voices,.posts,.faq,.consult-grid{grid-template-columns:minmax(0,1fr)}
+  .press .sheet{max-width:520px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:44px;padding-top:0}
+  .steps::before,.steps li::before{display:none}
+  .voices{gap:44px}
+  .faq{gap:36px}
+  .faq-side{position:static}
+  .post{min-height:0}
+  .ftr-top{grid-template-columns:1fr 1fr}
+  .util-l{display:none}
+  .util .wrap{justify-content:center}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{width:min(1200px,100% - 32px)}
+  .tagline{font-size:clamp(42px,12.6vw,64px)}
+  .hero-cta .btn{width:100%}
+  .mosaic{gap:12px;padding-bottom:44px}
+  .mosaic li{border-radius:16px}
+  .hero-work figcaption{flex-direction:column;gap:2px}
+  .facts{grid-template-columns:1fr;gap:0;padding:6px 20px}
+  .facts li,.facts li:nth-child(3){display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:center;padding:15px 0;border-left:0;border-top:1px solid var(--line)}
+  .facts li:first-child{border-top:0}
+  .facts strong{font-size:22px}
+  .facts span{margin-top:0;font-size:14px;text-wrap:wrap}
+  .feelbar-l{width:100%}
+  .feel{padding:9px 13px 9px 10px;font-size:14px}
+  .board{padding:26px 16px 20px;gap:28px 14px;border-radius:22px}
+  .pc-sign{height:76px;gap:12px;padding:0 22px;font-size:18px}
+  .pc-sign .wm{font-size:19px}
+  .sg-pill{display:none}
+  .pc-ad .hd{font-size:16px}
+  .pc-logo .wm{font-size:16px}
+  .press{padding:36px 22px 40px;border-radius:22px}
+  .sheet{padding:44px 34px 68px}
+  .art{padding:6% 7%}
+  .art-top{font-size:11px;gap:7px}
+  .art-top i{width:20px;height:20px;font-size:11px}
+  .art-h{font-size:25px}
+  .art-f{font-size:8.5px;white-space:nowrap}
+  .cbar{left:34px;bottom:24px}
+  .cbar i{width:12px;height:12px}
+  .cbar i:nth-child(n+7){display:none}
+  .stamp{right:22px;bottom:18px;font-size:10.5px;padding:6px 9px}
+  .steps{grid-template-columns:1fr}
+  .wall{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 12px}
+  .wall figure{border-radius:14px}
+  .wall p{font-size:12.5px}
+  .ans{padding-right:8px}
+  .form-card{padding:26px 20px 22px}
+  .fields{grid-template-columns:1fr}
+  .ftr-top{grid-template-columns:1fr;gap:34px}
+  .ftr-logos{gap:12px}
+  .ftr-logos img:first-child{height:42px}
+  .ftr-logos img:last-child{height:22px}
+  .util-r a:first-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-brand" viewBox="0 0 24 24"><path d="m4 20 1-4L16 5l3 3L8 19l-4 1Z"/><path d="m14 7 3 3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="m3.5 17.5 5-5 4 4 2.5-2.5 5.5 5.5"/></symbol>
+  <symbol id="i-promo" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l6 4V5L7 9H5a1 1 0 0 0-1 1Z"/><path d="M16.5 9.5a4 4 0 0 1 0 5M19 7a8 8 0 0 1 0 10"/></symbol>
+  <symbol id="i-reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 2v20M2 12h20"/></symbol>
+</svg>
+
+<!-- Utility bar: ties the digital team to the Allegra print shop -->
+<div class="util">
+  <div class="wrap">
+    <span class="util-l">Web, marketing and print under one roof in Portage, Michigan</span>
+    <span class="util-r">
+      <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Need print, mail or signs? Visit Allegra Portage<svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></a>
+      <a href="tel:269-324-0040">269-324-0040</a>
+    </span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="homepage.html" aria-label="Creative Marketing Group home">
+      <img src="https://allegracmg.com/wp-content/uploads/2024/11/CMG-Allegra-horiz.webp" width="460" height="60" alt="Creative Marketing Group | Allegra Marketing Print Mail">
+    </a>
+    <ul class="nav" id="nav">
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Web <svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>web</b> easy.</p>
+          <a href="website-design.html">Website Design<span>Custom, mobile-friendly sites that convert</span></a>
+          <a href="#">Ecommerce Web Design<span>Online stores that are simple to run</span></a>
+          <a href="#">Web Hosting<span>Fast, secure and looked after for you</span></a>
+          <a href="#">ADA Compliance<span>Accessible to every visitor</span></a>
+          <a href="#">Systems Integration<span>Connect your site to your CRM or ERP</span></a>
+          <a href="#">Marketing Automation<span>Follow-up that runs itself</span></a>
+        </div>
+      </li>
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Marketing <svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>marketing</b> easy.</p>
+          <a href="#">Search Engine Optimization<span>Rank higher, get found first</span></a>
+          <a href="#">Pay-Per-Click Advertising<span>Ads that reach ready-to-buy customers</span></a>
+          <a href="#">Local Listings<span>Show up on maps and local search</span></a>
+          <a href="#">Landing Pages<span>Pages built for one job: converting</span></a>
+          <a href="#">Email Marketing<span>Stay top of mind with your customers</span></a>
+          <a href="#">Reputation Management<span>More reviews, better reviews</span></a>
+        </div>
+      </li>
+      <li>
+        <button class="nav-l is-cur" type="button" aria-haspopup="true">Creative <svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>branding</b> easy.</p>
+          <a href="#">Brand Development<span>Logos and identities that fit</span></a>
+          <a href="#" aria-current="page">Graphic Design<span>Design for screen and print</span></a>
+          <a href="#">Content Creation<span>Words and visuals that sell</span></a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Print, Mail &amp; Signs<span>Produced in-house by Allegra Portage</span></a>
+        </div>
+      </li>
+      <li><a class="nav-l" href="#work">Work</a></li>
+      <li><a class="nav-l" href="#">About</a></li>
+      <li><a class="nav-l" href="homepage.html#insights">Insights</a></li>
+    </ul>
+    <a class="hdr-tel" href="tel:269-324-0040">269-324-0040</a>
+    <a class="btn btn-red" href="#consult">Get a proposal</a>
+    <button class="burger" type="button" aria-label="Open menu" aria-controls="nav" aria-expanded="false" id="burger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="rb" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
+        <stop offset="0" stop-color="#9A97F5" stop-opacity="0"/>
+        <stop offset=".32" stop-color="#9A7BEA"/>
+        <stop offset=".6" stop-color="#E0518A"/>
+        <stop offset=".82" stop-color="#F0506A"/>
+        <stop offset="1" stop-color="#F9A03F"/>
+      </linearGradient>
+    </defs>
+    <g id="lines" fill="none" stroke="url(#rb)" stroke-width="1.1"></g>
+  </svg>
+
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="#">Creative Services</a></li>
+        <li aria-current="page">Graphic Design</li>
+      </ol>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Graphic design · Portage, Michigan</p>
+        <h1 class="easy on-dark tagline">We make<br><b>design</b> easy.</h1>
+        <p class="hero-lead"><strong>First impressions are important.</strong> Our in-house designers create logos, graphics and marketing materials that look right on screen and on paper, with Allegra's print shop under the same roof.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="#consult">Start a design project <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="#work">See our work</a>
+        </div>
+      </div>
+      <figure class="hero-work">
+        <ul class="mosaic">
+          <li><img src="https://allegracmg.com/wp-content/uploads/2021/01/zensquirrel-logo.png" width="400" height="400" alt="Zen Squirrel logo"></li>
+          <li><img src="https://allegracmg.com/wp-content/uploads/2021/01/KoffeeKlutch-logo.jpg" width="391" height="391" alt="Koffee Klutch logo"></li>
+          <li><img src="https://allegracmg.com/wp-content/uploads/2021/01/ThePrairies-logo.jpg" width="435" height="435" alt="The Prairies Golf Club logo"></li>
+          <li><img src="https://allegracmg.com/wp-content/uploads/2021/01/AEBike-logo.jpg" width="465" height="465" alt="Alfred E Bike logo"></li>
+          <li><img src="https://allegracmg.com/wp-content/uploads/2021/01/WheelsForMeals-Logo.jpg" width="360" height="360" alt="Wheels for Meals logo"></li>
+          <li><img src="https://allegracmg.com/wp-content/uploads/2021/01/BridgeOrganics-Logo.jpg" width="378" height="378" alt="Bridge Organics logo"></li>
+        </ul>
+        <figcaption><b>Logos for local businesses</b><span>Designed by Creative Marketing Group</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACT BAR ============ -->
+<section class="facts-sec" aria-label="At a glance">
+  <div class="wrap">
+    <ul class="facts">
+      <li><strong>Decades</strong><span>of experience crafting graphics for every purpose</span></li>
+      <li><strong>Print + web</strong><span>every design built to work on paper and on screen</span></li>
+      <li><strong>Press-ready</strong><span>files prepared for production from the start</span></li>
+      <li><strong>One roof</strong><span>designers and Allegra's print shop, together in Portage</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BRAND BOARD ============ -->
+<section class="sec" id="brand">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Consistent everywhere</p>
+        <h2 class="easy h2">We make <b>staying on brand</b> easy.</h2>
+      </div>
+      <p class="lead">Your logo, colors and type should feel the same on a business card, a banner and a digital ad.</p>
+    </div>
+
+    <div class="feelbar" role="group" aria-label="Choose a brand feel for the sample below">
+      <span class="feelbar-l">Pick a feel:</span>
+      <button type="button" class="feel" data-feel="pro" aria-pressed="true" style="--sw:#2C308B"><i></i>Modern and professional</button>
+      <button type="button" class="feel" data-feel="friendly" aria-pressed="false" style="--sw:#E5702A"><i></i>Relaxed and friendly</button>
+      <button type="button" class="feel" data-feel="classic" aria-pressed="false" style="--sw:#1E4D40"><i></i>Classic</button>
+      <button type="button" class="feel" data-feel="bold" aria-pressed="false" style="--sw:#E0245E"><i></i>Unique and different</button>
+    </div>
+
+    <div class="board" id="board" data-feel="pro" role="img" aria-label="A sample brand shown in seven formats: a logo, business cards, a brochure, an email, a postcard, a digital ad and a banner. Changing the feel restyles all seven together.">
+      <div class="cell" style="grid-area:logo">
+        <div class="cell-in"><div class="piece pc-logo"><span class="mk">Y</span><span class="wm">Your Business</span><span class="tl">Portage, Michigan</span></div></div>
+        <span class="cell-tag">Logo</span>
+      </div>
+
+      <div class="cell" style="grid-area:card">
+        <div class="cell-in"><div class="pc-cards">
+          <div class="piece bc bc-back"><span class="mk inv">Y</span></div>
+          <div class="piece bc bc-front">
+            <div class="bc-id"><span class="mk">Y</span><span class="wm">Your Business</span></div>
+            <i class="ln" style="width:54%"></i><i class="ln" style="width:38%"></i><i class="ln" style="width:46%"></i>
+          </div>
+        </div></div>
+        <span class="cell-tag"><i class="dp"></i>Business cards</span>
+      </div>
+
+      <div class="cell" style="grid-area:broc">
+        <div class="cell-in"><div class="piece pc-broc">
+          <div class="br-top"><span class="mk inv">Y</span><span class="wm">Your Business</span></div>
+          <div class="br-img art-img"></div>
+          <span class="hd">Everything we do, in one place.</span>
+          <i class="ln" style="width:auto"></i><i class="ln" style="width:auto"></i><i class="ln" style="width:62%"></i>
+          <div class="br-cols"><div><i class="ln"></i><i class="ln"></i><i class="ln" style="width:70%"></i></div><div><i class="ln"></i><i class="ln"></i><i class="ln" style="width:55%"></i></div></div>
+          <span class="cta">Learn more</span>
+        </div></div>
+        <span class="cell-tag"><i class="dp"></i>Brochures</span>
+      </div>
+
+      <div class="cell" style="grid-area:mail">
+        <div class="cell-in"><div class="piece pc-mail">
+          <div class="ml-bar"><i></i><i></i><i></i></div>
+          <div class="ml-head"><span class="mk">Y</span><i class="ln"></i></div>
+          <div class="ml-hero"><span class="hd">News from Your Business</span></div>
+          <i class="ln" style="width:auto"></i><i class="ln" style="width:auto"></i><i class="ln" style="width:58%"></i>
+          <div class="ml-img art-img"></div>
+          <i class="ln" style="width:auto"></i><i class="ln" style="width:44%"></i>
+          <span class="cta">Read more</span>
+        </div></div>
+        <span class="cell-tag"><i class="ds"></i>Email</span>
+      </div>
+
+      <div class="cell" style="grid-area:post">
+        <div class="cell-in"><div class="piece pc-post">
+          <div class="po-art"><span class="hd">Now booking for spring.</span></div>
+          <div class="po-back"><span class="po-stamp"></span><span class="mk">Y</span><i class="ln" style="width:86%"></i><i class="ln" style="width:70%"></i><i class="ln" style="width:78%"></i><i class="ln" style="width:52%"></i></div>
+        </div></div>
+        <span class="cell-tag"><i class="dp"></i>Direct mail</span>
+      </div>
+
+      <div class="cell" style="grid-area:ad">
+        <div class="cell-in"><div class="piece pc-ad"><span class="mk inv">Y</span><span class="hd">Your offer, front and center.</span><span class="cta inv">Book now</span></div></div>
+        <span class="cell-tag"><i class="ds"></i>Digital ads</span>
+      </div>
+
+      <div class="cell" style="grid-area:sign">
+        <div class="cell-in"><div class="piece pc-sign"><i class="gr"></i><i class="gr"></i><i class="gr"></i><i class="gr"></i><span class="mk inv">Y</span><span class="wm">Your Business</span><span class="sg-pill">Grand opening</span></div></div>
+        <span class="cell-tag"><i class="dp"></i>Signs and banners</span>
+      </div>
+
+      <div class="board-foot">
+        <span>One brand, seven formats. Change the feel and everything follows.</span>
+        <div><span><i class="dp"></i>Print</span><span><i class="ds"></i>Screen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DESIGN ============ -->
+<section class="sec tint" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">What we design</p>
+        <h2 class="easy h2">First impressions are <b>important.</b></h2>
+      </div>
+      <p class="lead">However simple or complex the graphic you have in mind, our team comes up with the best solution.</p>
+    </div>
+
+    <div class="svc">
+      <article class="svc-card" style="--c:#CC3366">
+        <span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-brand"/></svg></span>
+        <h3>Company branding</h3>
+        <p>From your logo to your overall image and colors, we develop branding that represents you well, whether you want a relaxed, friendly feel or a modern, professional appearance.</p>
+        <ul>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Company logos</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Colors and overall image</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Websites, promotional materials and reports</li>
+        </ul>
+      </article>
+      <article class="svc-card" style="--c:#2C308B">
+        <span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-image"/></svg></span>
+        <h3>Image creation and editing</h3>
+        <p>Bring us images that need editing, or have us create a graphic from scratch. We work with you from initial concept to final design to get the finished image right.</p>
+        <ul>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Original graphics made from scratch</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Editing of images you provide</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Ready to use in print or on the web</li>
+        </ul>
+      </article>
+      <article class="svc-card" style="--c:#522E90">
+        <span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-promo"/></svg></span>
+        <h3>Promotional graphics</h3>
+        <p>Promotional materials need eye-catching graphics to reach your audience. Whether you want a classic look or something unique and different, we'll help you create it.</p>
+        <ul>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Flyers, brochures and direct mail</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Signage and displays</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Digital ads and email templates</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Presentations and multi-page documents</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESS-READY (print tie-in) ============ -->
+<section class="sec" id="print">
+  <div class="wrap">
+    <div class="press">
+      <div>
+        <img class="al" src="https://allegracmg.com/wp-content/uploads/2024/11/AllegraMPM-rev.webp" width="250" height="39" loading="lazy" alt="Allegra Marketing Print Mail">
+        <h2 class="easy on-dark">We make <b>press-ready</b> easy.</h2>
+        <p class="press-p">Design and print production happen under one roof, so the people who design your piece understand exactly how Allegra Portage will produce it.</p>
+        <ul class="ticks">
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Files built to be press-ready from the start</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Fewer revision cycles</li>
+          <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>A smoother path from approval to finished materials</li>
+        </ul>
+        <div class="tags">
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#9BC53D"></i>Print</a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#F08A24"></i>Direct Mail</a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#F0506A"></i>Signs</a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#C7A6FF"></i>Promo</a>
+        </div>
+        <a class="tlink" href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Visit Allegra Portage <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></a>
+      </div>
+
+      <!-- Decorative proof sheet: a design marked up for the press -->
+      <div class="sheet" aria-hidden="true">
+        <div class="art">
+          <span class="bleed"></span>
+          <span class="crop tl"></span><span class="crop tr"></span><span class="crop bl"></span><span class="crop br"></span>
+          <span class="note n-trim">Trim</span><span class="note n-bleed">Bleed</span>
+          <span class="art-top"><i>Y</i>Your Business</span>
+          <span class="art-h">Grand <b>opening.</b></span>
+          <span class="art-f">Saturday · Portage, Michigan</span>
+        </div>
+        <span class="cbar">
+          <i style="--c:#00AEEF"></i><i style="--c:#EC008C"></i><i style="--c:#FFE600"></i><i style="--c:#231F20"></i>
+          <i style="--c:#6E6B6C"></i><i style="--c:#A9A7A8"></i><i style="--c:#D4D3D3"></i><i style="--c:#ECECEC"></i>
+          <svg class="i" viewBox="0 0 24 24"><use href="#i-reg"/></svg>
+        </span>
+        <span class="stamp"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Press-ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec tint" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">How a design project runs</p>
+        <h2 class="easy h2">We make <b>the process</b> easy.</h2>
+      </div>
+      <p class="lead">From initial concept to final design, we work with you every step of the way.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">01</span><h3>Share your vision</h3><p>We work closely with you to get a clear picture of the graphics you're looking for.</p></li>
+      <li><span class="n">02</span><h3>See first concepts</h3><p>Our designers turn your branding and your brief into original concepts.</p></li>
+      <li><span class="n">03</span><h3>Tell us what you think</h3><p>We refine the design based on your feedback until the image is right.</p></li>
+      <li><span class="n">04</span><h3>Get the final design</h3><p>Finished artwork for print, web or both, printed by Allegra Portage if you'd like.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="sec work" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Our work</p>
+        <h2 class="h2">Logos we've <b>designed.</b></h2>
+      </div>
+      <a class="btn btn-line" href="#">See all work <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+    </div>
+    <ul class="wall">
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/MulderInsulation-logo.jpg" width="409" height="409" loading="lazy" alt="Mulder Insulation logo"></figure><p>Mulder Insulation</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/AtlasElectricalLogo.gif" width="360" height="360" loading="lazy" alt="Atlas Electrical Services logo"></figure><p>Atlas Electrical Services</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/OBGYN2-logo-768x768.jpg" width="768" height="768" loading="lazy" alt="OB-GYN P.C. logo"></figure><p>OB-GYN P.C.</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/VanDyke-logo.jpg" width="401" height="401" loading="lazy" alt="R VanDyke logo"></figure><p>R VanDyke</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/WestMilhamDental-Logo.jpg" width="378" height="378" loading="lazy" alt="West Milham Dental logo"></figure><p>West Milham Dental</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/MainStreetFinancial-logo.jpg" width="523" height="523" loading="lazy" alt="MainStreet Financial logo"></figure><p>MainStreet Financial</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/Velocity-Logo.jpg" width="309" height="309" loading="lazy" alt="Velocity logo"></figure><p>Velocity</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/GlassPix-logo.jpg" width="372" height="372" loading="lazy" alt="GlassPix logo"></figure><p>GlassPix</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/BrainTrust-Logo.jpg" width="360" height="360" loading="lazy" alt="BrainTrust logo"></figure><p>BrainTrust</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/ClearStrategy-Logo.jpg" width="360" height="360" loading="lazy" alt="Clear Strategy Financial Advisors logo"></figure><p>Clear Strategy Financial Advisors</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/Flowers-Early-Learning-logo-1.webp" width="576" height="576" loading="lazy" alt="Flowers Early Learning logo"></figure><p>Flowers Early Learning</p></li>
+      <li><figure><img src="https://allegracmg.com/wp-content/uploads/2021/01/DavesGlass-logo.jpg" width="337" height="337" loading="lazy" alt="Dave's Glass logo"></figure><p>Dave's Glass</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="sec">
+  <div class="wrap voices">
+    <div>
+      <p class="eyebrow">Why our clients love us</p>
+      <blockquote>
+        <p class="easy bigq">“Great, <b>easy</b> people to work with.”</p>
+        <p class="who"><strong>Jeff Ray</strong>NS Machine</p>
+      </blockquote>
+    </div>
+    <div class="qs">
+      <blockquote class="q"><p>“They made the process so easy.”</p><footer><b>Holly Cherry</b> · Kneading Relaxation</footer></blockquote>
+      <blockquote class="q"><p>“It's nice to have local people that I can call and talk with any questions.”</p><footer><b>Craig Bradfield</b> · Hand Therapy of Michigan</footer></blockquote>
+      <blockquote class="q"><p>“Creative Marketing Group has been advising us for over 20 years.”</p><footer><b>Jim Van Tuinen</b> · Van Tuinen Painting</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S NEXT ============ -->
+<section class="sec tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Goes well with</p>
+        <h2 class="easy h2">We make <b>what's next</b> easy.</h2>
+      </div>
+      <p class="lead">Good design goes further with the right brand, the right words and the right website behind it.</p>
+    </div>
+    <div class="posts">
+      <a class="post" href="#" style="--c:#CC3366"><span class="tag">Creative</span><h3>Brand Development</h3><p>Logos and identities that fit, built to last beyond a single project.</p><span class="tlink">Explore brand development <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a>
+      <a class="post" href="#" style="--c:#CC3366"><span class="tag">Creative</span><h3>Content Creation</h3><p>Words and visuals that sell, written by the same in-house team.</p><span class="tlink">Explore content creation <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a>
+      <a class="post" href="website-design.html" style="--c:#2C308B"><span class="tag">Web</span><h3>Website Design</h3><p>Custom, mobile-friendly sites that carry your new look online.</p><span class="tlink">Explore website design <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div class="faq-side">
+      <p class="eyebrow">Frequently asked questions</p>
+      <h2 class="easy h2">Questions, <b>answered.</b></h2>
+      <p class="lead">Straight answers to what we hear most. If yours isn't here, a real person in Portage will pick up.</p>
+      <a class="btn btn-ghost" href="tel:269-324-0040">Call 269-324-0040</a>
+    </div>
+    <div>
+      <details class="qa" name="faq" open>
+        <summary>What kinds of graphics do you design? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>We design across a wide range of formats, including logos and company branding, flyers and brochures, direct mail layouts, signage and displays, digital ads, email templates, presentation materials and multi-page documents. We can handle a single piece or a coordinated set of campaign visuals across channels.</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>How does design connect with print production? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>Because design and print production happen under one roof with Allegra Portage, files are built to be press-ready from the start. That means fewer revision cycles and a smoother path from design approval to finished materials. The team that designs your piece understands exactly how it will be produced.</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Can a design work across both print and digital formats? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>Yes. We prepare designs for multiple output formats, so the same visual direction can work for a printed brochure, a digital ad and an email layout. Each format is adapted to its medium, keeping your brand consistent whether someone sees it on paper or on a screen.</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Can you work with images I already have? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>Yes. Whether you provide images that need editing or want a graphic created from scratch, our design team has the capabilities. Original concepts and edited graphics can both be applied to print or web.</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Can design be built for ongoing or repeat use? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>Yes. We create materials with reuse in mind, including templates for email, direct mail and campaigns that can be updated over time without a full redesign. This makes recurring programs more efficient and keeps your brand presentation consistent across every send.</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Can you coordinate design across multiple channels? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>Yes. We align visual design across print, digital and direct mail so your brand looks consistent wherever your audience encounters it. Whether you're running a single campaign or an ongoing multi-channel program, we keep the look and messaging organized from one place.</p></div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Do you outsource any of your work? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans"><p>Never. We take pride in our work and we believe in accountability. Every line of code, every word of copy and every speck of imagery is created by us, for you. You can email, call or visit the individuals working on your project at any time.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSULTATION ============ -->
+<section class="consult" id="consult">
+  <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g id="lines2" fill="none" stroke="url(#rb)" stroke-width="1.1"></g></svg>
+  <div class="wrap consult-grid">
+    <div>
+      <h2 class="easy on-dark">We make <b>getting started</b> easy.</h2>
+      <p class="consult-lead">Tell us what you have in mind. With your vision and our creative team, your business will be represented better than ever.</p>
+      <ul class="ticks">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Designed in-house by our own team</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Built for print, web or both</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Printed by Allegra Portage if you need it</li>
+      </ul>
+      <p class="consult-tel">Rather just talk? Call <a href="tel:269-324-0040">269-324-0040</a> and a real person in Portage will pick up.</p>
+    </div>
+
+    <div class="form-card" id="c-card">
+      <form id="c-form" novalidate>
+        <h3>Start a design project</h3>
+        <p class="form-sub">It takes about a minute.</p>
+        <fieldset class="grp">
+          <legend>What do you need?</legend>
+          <div class="chips">
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="A logo or branding" checked><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>A logo or branding</label>
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="Marketing materials"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Marketing materials</label>
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="Image editing"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Image editing</label>
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="Not sure yet"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Not sure yet</label>
+          </div>
+        </fieldset>
+        <div class="fields">
+          <label class="field" data-f="name"><span>Your name</span><input name="name" autocomplete="name"><span class="msg">Please tell us your name.</span></label>
+          <label class="field"><span>Business <i>(optional)</i></span><input name="company" autocomplete="organization"></label>
+          <label class="field" data-f="email"><span>Email</span><input name="email" type="email" autocomplete="email"><span class="msg">Please enter a valid email.</span></label>
+          <label class="field"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label class="addon">
+          <input class="sr-only" type="checkbox" name="print">
+          <svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>
+          <span><strong>I'd like it printed, too</strong><span>Print, mail or signs produced by Allegra Portage</span></span>
+        </label>
+        <button type="submit" class="btn btn-red">Start my design project <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+        <p class="fine">By submitting this form, you agree to our <a href="#">data policy</a>. We never sell or share client data.</p>
+      </form>
+      <div class="done" id="c-done" hidden>
+        <div class="done-ic"><svg class="i" viewBox="0 0 24 24" style="stroke-width:2.4"><use href="#i-check"/></svg></div>
+        <h3 id="c-done-h" tabindex="-1"></h3>
+        <p id="c-done-p"></p>
+        <p class="mock">Mockup only: nothing was actually sent.</p>
+        <button type="button" class="btn btn-ghost" id="c-restart">Start over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div>
+        <div class="ftr-logos">
+          <img src="https://allegracmg.com/wp-content/uploads/2020/05/cmg-logo-rev.png" width="249" height="76" loading="lazy" alt="Creative Marketing Group">
+          <span></span>
+          <img src="https://allegracmg.com/wp-content/uploads/2024/11/AllegraMPM-rev.webp" width="250" height="39" loading="lazy" alt="Allegra Marketing Print Mail">
+        </div>
+        <address>6054 Lovers Lane<br>Portage, MI 49002<br><a class="tel" href="tel:269-324-0040">269-324-0040</a></address>
+        <p class="ftr-print">Need offline marketing materials? <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Visit Allegra Portage ↗</a></p>
+      </div>
+      <div>
+        <h4>Website Services</h4>
+        <ul><li><a href="website-design.html">Website Design</a></li><li><a href="#">Ecommerce Web Design</a></li><li><a href="#">Web Hosting</a></li><li><a href="#">ADA Compliance</a></li><li><a href="#">Systems Integration</a></li><li><a href="#">Marketing Automation</a></li></ul>
+      </div>
+      <div>
+        <h4>Marketing Services</h4>
+        <ul><li><a href="#">Search Engine Optimization</a></li><li><a href="#">Pay-Per-Click Advertising</a></li><li><a href="#">Local Listings</a></li><li><a href="#">Landing Pages</a></li><li><a href="#">Email Marketing</a></li><li><a href="#">Reputation Management</a></li></ul>
+      </div>
+      <div>
+        <h4>Creative &amp; Company</h4>
+        <ul><li><a href="#">Brand Development</a></li><li><a href="#" aria-current="page">Graphic Design</a></li><li><a href="#">Content Creation</a></li><li><a href="#work">Portfolio</a></li><li><a href="homepage.html#insights">News &amp; Insights</a></li><li><a href="#consult">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 Creative Marketing Group</span>
+      <div><a href="#">Privacy</a><a href="#">Accessibility</a><a href="https://www.facebook.com/creativemarketinggroup" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- In-page links: "#" placeholders stay put, "#section" links scroll there ---------- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]'); if (!a) return;
+    e.preventDefault();
+    var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
+    t.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    try { history.replaceState(null, '', '#' + t.id); } catch (err) {}
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var burger = $('#burger'), nav = $('#nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); } });
+
+  /* ---------- Ribbon lines (same generator as the homepage) ---------- */
+  function drawLines(id, n){
+    var g = document.getElementById(id); if (!g) return;
+    var s = '';
+    for (var i = 0; i < n; i++){
+      var t = i / (n - 1);
+      var y0 = 690 - t * 130, c1 = 330 + t * 300, c2 = 640 - t * 520, y1 = 30 + t * 250;
+      var o = (0.2 + 0.6 * Math.sin(Math.PI * t)).toFixed(2);
+      s += '<path d="M-40 ' + y0.toFixed(1) + ' C 420 ' + c1.toFixed(1) + ', 900 ' + c2.toFixed(1) + ', 1480 ' + y1.toFixed(1) + '" opacity="' + o + '"/>';
+    }
+    g.innerHTML = s;
+  }
+  drawLines('lines', 30);
+  drawLines('lines2', 30);
+
+  /* ---------- Brand board: one control restyles all seven pieces ---------- */
+  (function(){
+    var board = $('#board'), btns = $$('.feel');
+    if (!board || !btns.length) return;
+    var order = btns.map(function(b){ return b.dataset.feel; }), timer = null, touched = false;
+    function setFeel(f){
+      board.dataset.feel = f;
+      btns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.feel === f); });
+    }
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){ touched = true; clearInterval(timer); timer = null; setFeel(b.dataset.feel); });
+    });
+    // Cycle through the feels on its own until someone picks one.
+    if (reduced || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(en){
+      if (touched) return;
+      if (en[0].isIntersecting && !timer) timer = setInterval(function(){
+        setFeel(order[(order.indexOf(board.dataset.feel) + 1) % order.length]);
+      }, 3600);
+      else if (!en[0].isIntersecting) { clearInterval(timer); timer = null; }
+    }, { threshold: .3 }).observe(board);
+  })();
+
+  /* ---------- Project form (mock submit) ---------- */
+  (function(){
+    var form = $('#c-form'), done = $('#c-done');
+    form.addEventListener('input', function(e){
+      var w = e.target.closest('.field'); if (w) w.classList.remove('err');
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = form.elements.name.value.trim(), email = form.elements.email.value.trim();
+      var okName = name.length > 1, okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      $('[data-f="name"]', form).classList.toggle('err', !okName);
+      $('[data-f="email"]', form).classList.toggle('err', !okMail);
+      if (!okName || !okMail) { form.elements[okName ? 'email' : 'name'].focus(); return; }
+      $('#c-done-h').textContent = 'Thanks, ' + name.split(/\s+/)[0] + '. We\'ll be in touch.';
+      $('#c-done-p').textContent = 'We\'ll reply to ' + email + ' within one business day to talk through your project' +
+        (form.elements.print.checked ? ', including printing with Allegra Portage.' : '.');
+      form.hidden = true; done.hidden = false;
+      $('#c-done-h').focus({ preventScroll: true });
+    });
+    $('#c-restart').addEventListener('click', function(){
+      form.reset(); done.hidden = true; form.hidden = false;
+      form.elements.name.focus({ preventScroll: true });
+    });
+  })();
+})();
+</script>
+</body>
+</html>

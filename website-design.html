@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Website Design | Creative Marketing Group (page mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Raleway:wght@300;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokens (shared with homepage) ---------- */
+:root{
+  --indigo-950:#101233; --indigo-900:#171A4D; --indigo-800:#1F2268;
+  --indigo:#2C308B;            /* CMG brand indigo */
+  --indigo-300:#A9ACDD; --indigo-100:#E3E4F3; --indigo-50:#F4F5FB;
+  --red:#E21C40;               /* CMG brand red */
+  --red-btn:#D7183A;
+  --purple:#522E90;            /* Allegra purple */
+  --magenta:#CC3366;           /* Allegra magenta */
+  --orange:#F08A24;            /* Allegra orange */
+  --ink:#1A1C3A; --slate:#585C7B; --line:#E2E4EF; --line-2:#C9CCE0;
+  --ribbon:linear-gradient(90deg,#2C308B,#522E90 30%,#CC3366 58%,#E21C40 78%,#F08A24);
+  --ribbon-lite:linear-gradient(90deg,#9A97F5,#C86BD0 35%,#F0527A 66%,#F9A03F);
+  --display:"Raleway","Plus Jakarta Sans",sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+/* ---------- Base (shared) ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:3px solid #7C7FF0;outline-offset:2px;border-radius:6px}
+section{position:relative}
+.sec{padding:120px 0}
+.tint{background:var(--indigo-50)}
+svg.i{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* The tagline system: light frame, bold fill-in word, ribbon underline */
+.easy{font-family:var(--display);font-weight:300;letter-spacing:-.015em;line-height:1.06;color:var(--indigo)}
+.easy b{font-weight:800;white-space:nowrap;padding-bottom:.05em;background:var(--ribbon) no-repeat 0 100%/100% .07em}
+.easy.on-dark{color:#fff}
+.easy.on-dark b{background-image:var(--ribbon-lite)}
+.h2{font-size:clamp(36px,4.7vw,60px)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
+.lead{font-size:19px;color:var(--slate);max-width:56ch}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head .lead{max-width:32ch;text-wrap:balance}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15.5px;line-height:1;padding:16px 22px;border-radius:12px;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-red{background:var(--red-btn);color:#fff}
+.btn-red:hover{background:#BC1130}
+.btn-ghost{background:#fff;border-color:var(--line-2);color:var(--indigo)}
+.btn-ghost:hover{border-color:var(--indigo)}
+.btn-white{background:#fff;color:var(--indigo)}
+.btn-white:hover{background:var(--indigo-50)}
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15.5px;color:var(--indigo);text-decoration:none}
+.tlink svg{width:17px;height:17px;transition:transform .18s}
+.tlink:hover{color:var(--red)}
+.tlink:hover svg{transform:translateX(3px)}
+
+/* ---------- Utility bar + header (shared) ---------- */
+.util{background:var(--indigo-950);color:#C9CBE8;font-size:13.5px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:40px}
+.util a{color:#fff;text-decoration:none;font-weight:600}
+.util a:hover{text-decoration:underline}
+.util-r{display:flex;gap:24px;align-items:center}
+.util-r svg{width:13px;height:13px;vertical-align:-1px;margin-left:3px}
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:80px}
+.logo img{height:42px;width:auto}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav>li{position:relative}
+.nav-l{position:relative;display:flex;align-items:center;gap:6px;padding:10px 13px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;background:none;border:0;cursor:pointer}
+.nav-l svg{width:14px;height:14px;opacity:.55}
+.nav-l:hover,.nav>li:focus-within>.nav-l{background:var(--indigo-50);color:var(--indigo)}
+/* Current section marker: new for interior pages */
+.nav-l.is-cur{color:var(--indigo)}
+.nav-l.is-cur::after{content:"";position:absolute;left:13px;right:13px;bottom:3px;height:2.5px;border-radius:2px;background:var(--ribbon)}
+.menu{position:absolute;top:calc(100% + 10px);left:-14px;width:330px;background:#fff;border-radius:18px;padding:12px;box-shadow:0 24px 60px -18px rgba(16,18,51,.35),0 0 0 1px var(--line);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .16s,transform .16s,visibility .16s}
+.menu::before{content:"";position:absolute;inset:-12px 0 auto;height:12px}
+.nav>li:hover .menu,.nav>li:focus-within .menu{opacity:1;visibility:visible;transform:none}
+.menu-h{font-size:21px;padding:8px 12px 12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.menu a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14.5px;line-height:1.35}
+.menu a span{display:block;font-weight:400;font-size:13px;color:var(--slate)}
+.menu a:hover,.menu a[aria-current]{background:var(--indigo-50);color:var(--indigo)}
+.hdr-tel{font-weight:700;color:var(--red);text-decoration:none;font-size:15.5px;white-space:nowrap}
+.hdr .btn{padding:13px 18px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;cursor:pointer;place-items:center}
+.burger svg{width:22px;height:22px}
+
+/* ---------- Interior hero ---------- */
+.hero{background:linear-gradient(150deg,#15174A 0%,#2C308B 56%,#47309A 100%);color:#fff;padding:26px 0 178px;overflow:hidden}
+.hero-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.crumbs{position:relative}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:8px;font-size:13.5px;color:#A9ACDD}
+.crumbs li{display:flex;align-items:center;gap:8px}
+.crumbs li+li::before{content:"/";opacity:.55}
+.crumbs a{color:#C9CBE8;text-decoration:none}
+.crumbs a:hover{color:#fff;text-decoration:underline}
+.crumbs [aria-current]{color:#fff;font-weight:600}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:60px;align-items:center;padding-top:54px}
+.hero .eyebrow{color:#C9CBE8;display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.hero .eyebrow::before{content:"";width:44px;height:3px;border-radius:9px;background:var(--ribbon-lite)}
+.tagline{font-size:clamp(46px,6.3vw,82px);line-height:1.04}
+.hero-lead{font-size:18.5px;line-height:1.6;color:#DCDDF3;max-width:50ch;margin-top:28px}
+.hero-lead strong{color:#fff;font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-shot{position:relative}
+.hero-shot::before{content:"";position:absolute;inset:-10% -8% 6%;background:radial-gradient(closest-side,rgba(154,151,245,.36),transparent 72%);pointer-events:none}
+.hero-shot img{position:relative;width:100%;filter:drop-shadow(0 30px 34px rgba(8,9,30,.5))}
+.hero-shot figcaption{position:relative;margin-top:18px;font-size:13.5px;color:#C9CBE8;display:flex;justify-content:space-between;gap:16px}
+.hero-shot figcaption b{color:#fff;font-weight:600}
+
+/* ---------- Fact bar (rises out of the hero, like the homepage plan builder) ---------- */
+.facts-sec{margin-top:-96px;z-index:2}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:24px;padding:36px 10px;box-shadow:0 40px 90px -30px rgba(16,18,51,.5),0 0 0 1px rgba(16,18,51,.06)}
+.facts li{padding:2px 30px;border-left:1px solid var(--line)}
+.facts li:first-child{border-left:0}
+.facts strong{display:block;font-family:var(--display);font-weight:300;font-size:clamp(30px,3.1vw,40px);line-height:1.1;color:var(--indigo);font-feature-settings:"lnum" 1;letter-spacing:-.01em;white-space:nowrap}
+.facts span{display:block;color:var(--slate);font-size:15px;line-height:1.45;margin-top:8px;text-wrap:balance}
+
+/* ---------- Anatomy: what's built into every site ---------- */
+.ana{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:64px;align-items:center}
+.stage{position:relative;border-radius:28px;background:var(--indigo-50);padding:40px 40px 78px}
+.stage-hint{position:absolute;left:40px;bottom:26px;font-size:13.5px;color:var(--slate);max-width:calc(100% - 200px)}
+.bw{position:relative;background:#fff;border-radius:16px;box-shadow:0 30px 60px -32px rgba(16,18,51,.5),0 0 0 1px var(--line)}
+.bw-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.bw-dots{display:flex;gap:5px}
+.bw-dots i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
+.bw-url{flex:1;min-width:0;display:flex;align-items:center;gap:7px;font-size:11.5px;line-height:1;color:var(--slate);background:var(--indigo-50);border-radius:99px;padding:7px 26px 7px 11px}
+.bw-url svg{width:11px;height:11px;flex:none}
+.bw-url b{color:var(--ink);font-weight:600}
+.bw-url em{font-style:normal;margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sk{display:block;height:10px;border-radius:9px;background:var(--indigo-100);margin:5px 0}
+.m-nav{display:flex;align-items:center;gap:12px;padding:12px 20px}
+.m-nav .sk{height:7px;margin:0}
+.m-logo{width:26px;height:26px;border-radius:8px;background:var(--indigo);margin-right:auto}
+.m-btn{position:relative;display:inline-block;font-size:10.5px;font-weight:700;line-height:1;color:#fff;background:var(--red-btn);border-radius:7px;padding:8px 11px;white-space:nowrap}
+.m-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:center;margin:0 10px;padding:14px 10px 16px;border-radius:12px}
+.m-h{display:block;font-size:17px;font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin-bottom:9px}
+.m-hero .sk{height:7px;margin:6px 0}
+.m-hero .m-btn{margin-top:10px}
+.m-img{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(135deg,#522E90,#CC3366 55%,#F08A24);display:grid;place-items:center;color:rgba(255,255,255,.9)}
+.m-img svg{width:34px;height:34px}
+.m-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:8px 20px 0}
+.m-card{border-radius:10px;padding:12px;box-shadow:inset 0 0 0 1px var(--line);background:#fff}
+.m-card .sk{height:6px;margin:6px 0 0}
+.m-ic{display:block;width:20px;height:20px;border-radius:6px;background:var(--indigo-100);margin-bottom:9px}
+.m-edit{position:absolute;top:9px;right:22px;display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:700;line-height:1;color:var(--indigo);background:#fff;border-radius:6px;padding:4px 6px;box-shadow:0 0 0 1px var(--indigo-300)}
+.m-edit svg{width:9px;height:9px}
+.m-form{display:flex;align-items:center;gap:8px;margin:14px 132px 20px 20px;padding:10px 12px;border-radius:10px;background:var(--indigo-50)}
+.m-in{flex:1;height:22px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px var(--line-2)}
+.m-send{font-size:10px;font-weight:700;color:#fff;background:var(--indigo);border-radius:6px;padding:6px 9px;line-height:1}
+.m-flow{width:22px;height:12px;color:var(--indigo-300);flex:none}
+.m-crm{font-size:10px;font-weight:700;color:var(--purple);background:#fff;border-radius:6px;padding:6px 8px;line-height:1;box-shadow:0 0 0 1px #D9CCEF;white-space:nowrap}
+.ph{position:absolute;right:24px;bottom:22px;width:116px;border-radius:22px;padding:7px;background:var(--indigo-950);box-shadow:0 24px 40px -18px rgba(16,18,51,.65)}
+.ph-scr{border-radius:16px;background:#fff;padding:9px 9px 11px}
+.ph-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.ph-top .m-logo{width:15px;height:15px;border-radius:5px;margin:0}
+.ph-top i{width:13px;height:10px;background:linear-gradient(var(--ink),var(--ink)) 0 0/100% 2px no-repeat,linear-gradient(var(--ink),var(--ink)) 0 50%/100% 2px no-repeat,linear-gradient(var(--ink),var(--ink)) 0 100%/100% 2px no-repeat}
+.ph .m-img{aspect-ratio:16/10;border-radius:8px}
+.ph .m-img svg{width:20px;height:20px}
+.ph .m-h{font-size:10.5px;margin:9px 0 6px}
+.ph .sk{height:5px;margin:5px 0}
+.ph .m-btn{display:block;text-align:center;font-size:9px;padding:7px;margin-top:9px}
+/* Hotspots + pins */
+.hot{transition:box-shadow .2s}
+.bw-url,.m-hero,.m-card,.m-form{position:relative}
+.hot.is-on{box-shadow:0 0 0 2px var(--indigo),0 0 0 7px rgba(44,48,139,.14)}
+.m-card.hot.is-on{box-shadow:0 0 0 2px var(--indigo),0 0 0 7px rgba(44,48,139,.14)}
+.ph.hot.is-on{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--indigo),0 0 0 10px rgba(44,48,139,.16)}
+.pin{position:absolute;z-index:3;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:700;line-height:1;background:#fff;color:var(--indigo);box-shadow:0 0 0 1.5px var(--indigo),0 6px 12px -4px rgba(16,18,51,.45);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.pin:hover{transform:scale(1.1)}
+.pin.is-on{background:var(--indigo);color:#fff}
+.pin.p1{top:-11px;left:-11px}
+.pin.p2{top:-13px;right:-13px}
+.pin.p3{top:-11px;left:-11px}
+.pin.p4{top:-9px;right:-9px}
+.pin.p5{top:-12px;right:-12px}
+.pin.p6{top:50%;left:-12px;margin-top:-13px}
+.ana-list{display:grid;gap:4px}
+.ana-item{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:none;border:1.5px solid transparent;border-radius:18px;padding:15px 20px 15px 15px;cursor:pointer;transition:background .2s,border-color .2s}
+.ana-n{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:var(--indigo);border:1.5px solid var(--line-2);background:#fff;transition:.2s}
+.ana-item strong{display:block;font-size:18px;line-height:1.3;letter-spacing:-.005em}
+.ana-item .d{display:block;font-size:15.5px;line-height:1.5;color:var(--slate);margin-top:3px}
+.ana-item[aria-pressed=true]{background:var(--indigo-50);border-color:var(--indigo-100)}
+.ana-item[aria-pressed=true] .ana-n{background:var(--indigo);border-color:var(--indigo);color:#fff}
+
+/* ---------- Your list / our list ---------- */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:76px;align-items:center}
+.feature .lead{margin-top:20px}
+.never{margin-top:30px;padding:20px 22px 20px 26px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);position:relative;overflow:hidden;max-width:520px}
+.never::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#522E90,#CC3366,#F08A24)}
+.never dt{font-size:14.5px;color:var(--slate)}
+.never dd{margin:6px 0 0;font-size:16px;line-height:1.5}
+.never dd b{font-family:var(--display);font-weight:800;font-size:25px;color:var(--indigo);margin-right:6px;letter-spacing:-.01em}
+.lists{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:18px;align-items:center}
+.lcard{border-radius:22px;padding:26px 24px 26px}
+.lcard-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+.lcard-h h3{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lcard-h span{font-size:12.5px;font-weight:600;border-radius:99px;padding:4px 10px;white-space:nowrap}
+.l-you{background:#fff;box-shadow:0 0 0 1px var(--line),0 26px 50px -32px rgba(16,18,51,.45)}
+.l-you h3{color:var(--red)}
+.l-you .lcard-h span{background:var(--indigo-50);color:var(--indigo)}
+.l-you li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);font-weight:600;font-size:15.5px;line-height:1.35}
+.l-you li i{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700;color:var(--indigo)}
+.l-you p{margin-top:14px;font-size:14px;color:var(--slate)}
+.l-us{position:relative;overflow:hidden;color:#fff;background:radial-gradient(120% 100% at 85% 0%,#4336A6 0%,#2C308B 42%,#171A4D 100%);padding:30px 28px 34px}
+.l-us::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ribbon-lite)}
+.l-us h3{color:#fff}
+.l-us .lcard-h span{background:rgba(255,255,255,.12);color:#fff}
+.l-us li{display:flex;gap:13px;align-items:flex-start;padding:13px 0;border-top:1px solid rgba(255,255,255,.14)}
+.l-us li i{flex:none;width:10px;height:10px;border-radius:50%;background:var(--c);margin-top:7px}
+.l-us li strong{display:block;font-size:16px;line-height:1.3}
+.l-us li span{display:block;font-size:14.5px;line-height:1.45;color:#C9CBE8;margin-top:2px}
+
+/* ---------- Process ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:28px;position:relative;padding-top:34px}
+.steps::before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;border-radius:3px;background:var(--ribbon)}
+.steps li{position:relative}
+.steps li::before{content:"";position:absolute;top:-34px;left:0;width:19px;height:19px;border-radius:50%;background:#fff;border:3px solid var(--indigo)}
+.steps li:nth-child(2)::before{border-color:var(--purple)}
+.steps li:nth-child(3)::before{border-color:var(--magenta)}
+.steps li:nth-child(4)::before{border-color:var(--red)}
+.steps li:nth-child(5)::before{border-color:var(--orange)}
+.steps .n{font-family:var(--display);font-weight:300;font-size:52px;line-height:1;color:var(--indigo);font-feature-settings:"lnum" 1}
+.steps h3{font-size:19px;line-height:1.3;margin:14px 0 8px}
+.steps p{font-size:15.5px;color:var(--slate)}
+.deadline{display:flex;gap:16px;align-items:center;margin-top:56px;padding:20px 24px;border-radius:18px;background:var(--indigo-50);font-size:16px;color:var(--slate)}
+.deadline svg{flex:none;width:26px;height:26px;color:var(--indigo)}
+.deadline strong{color:var(--ink)}
+
+/* ---------- Work ---------- */
+.work{background:var(--indigo-950);color:#fff}
+.work .eyebrow{color:#F9A03F}
+.work h2{font-family:var(--display);font-weight:300;letter-spacing:-.015em;line-height:1.08}
+.work h2 b{font-weight:800}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 24px}
+.proj{text-decoration:none;display:block}
+.proj-img{border-radius:22px;padding:34px 22px 28px;background:linear-gradient(160deg,#262A7C,#191C55);overflow:hidden}
+.proj-img img{width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 18px 20px rgba(5,6,22,.5))}
+.proj:hover .proj-img img{transform:scale(1.045)}
+.proj h3{font-size:19px;margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.proj h3 svg{width:18px;height:18px;opacity:.5;transition:.18s;flex:none}
+.proj:hover h3 svg{opacity:1;transform:translate(2px,-2px)}
+.proj p{font-size:14.5px;color:var(--indigo-300);margin-top:2px}
+
+/* ---------- Packages ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.plan{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:24px;padding:38px 30px 30px;box-shadow:inset 0 0 0 1.5px var(--line);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.plan:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1.5px var(--indigo-300),0 30px 50px -34px rgba(44,48,139,.55)}
+/* One ribbon, cut across the three cards */
+.plan::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--bar)}
+.plan-name{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.plan-for{color:var(--slate);font-size:15.5px;margin-top:8px}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:22px}
+.price strong{font-family:var(--display);font-weight:300;font-size:58px;line-height:1;color:var(--indigo);font-feature-settings:"lnum" 1;letter-spacing:-.02em}
+.price span{color:var(--slate);font-size:15px}
+.plan-note{font-size:13.5px;color:var(--slate);margin-top:6px}
+.plan ul{margin:24px 0 30px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:11px}
+.plan li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4}
+.plan li svg{flex:none;width:18px;height:18px;margin-top:1px;color:var(--c);stroke-width:2.6}
+.plan li.plus{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);padding-top:8px}
+.plan .btn{margin-top:auto;width:100%}
+.custom{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:24px;padding:30px 34px;border-radius:24px;background:var(--indigo-50)}
+.custom h3{font-size:21px;line-height:1.3;letter-spacing:-.01em}
+.custom p{color:var(--slate);font-size:16px;max-width:66ch;margin-top:6px}
+
+/* ---------- Testimonials (shared) ---------- */
+.voices{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:76px;align-items:center}
+.bigq{font-size:clamp(38px,5vw,66px);line-height:1.08}
+.who{margin-top:26px;font-size:16px;color:var(--slate)}
+.who strong{color:var(--ink);display:block;font-size:17px}
+.qs{display:grid;gap:14px}
+.q{border:1.5px solid var(--line);border-radius:18px;padding:22px 24px;background:#fff}
+.q p{font-size:17px;line-height:1.5;font-weight:500}
+.q footer{margin-top:10px;font-size:14.5px;color:var(--slate)}
+.q footer b{color:var(--ink);font-weight:700}
+
+/* ---------- What's next + print (shared card system) ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{border-radius:28px;padding:44px;display:flex;flex-direction:column;align-items:flex-start}
+.card .easy{font-size:clamp(32px,3.5vw,44px)}
+.card p:not(.eyebrow){margin-top:16px;color:var(--slate);max-width:46ch}
+.card-brand{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.f-links{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;margin:24px 0 30px;width:100%}
+.f-links a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:15.5px;text-decoration:none;transition:color .15s}
+.f-links svg{width:16px;height:16px;color:var(--indigo-300);transition:transform .18s,color .18s;flex:none}
+.f-links a:hover{color:var(--indigo)}
+.f-links a:hover svg{color:var(--red);transform:translateX(3px)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 30px}
+.tags a{font-size:14.5px;font-weight:600;text-decoration:none;border:1.5px solid var(--line);border-radius:99px;padding:8px 14px;transition:.15s}
+.card .tlink{margin-top:auto}
+.card-print{background:linear-gradient(150deg,#5B33A0,#3F2378);color:#fff;position:relative;overflow:hidden}
+.card-print::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ribbon-lite)}
+.card-print p:not(.eyebrow){color:#DDD3F1}
+.card-print .al{height:30px;width:auto;margin-bottom:26px}
+.card-print .tags a{border-color:rgba(255,255,255,.28);color:#fff;display:inline-flex;align-items:center;gap:8px}
+.card-print .tags a:hover{border-color:#fff;color:#fff}
+.card-print .tags i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.card-print .tlink{color:#fff}
+.card-print .tlink:hover{color:#FFD9A8}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:76px;align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side .lead{margin:20px 0 26px;font-size:17.5px}
+.qa{border-bottom:1px solid var(--line-2)}
+.qa:first-child{border-top:1px solid var(--line-2)}
+.qa summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-size:18.5px;font-weight:600;line-height:1.35;cursor:pointer;list-style:none;transition:color .15s}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--indigo)}
+.pm{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line-2);background:#fff;display:grid;place-items:center;color:var(--indigo);transition:.2s}
+.pm svg{width:14px;height:14px;stroke-width:2.6}
+.qa[open] .pm{background:var(--indigo);border-color:var(--indigo);color:#fff;transform:rotate(45deg)}
+.ans{padding:0 56px 26px 4px;color:var(--slate);font-size:16.5px}
+.ans p+p{margin-top:12px}
+.ans a{color:var(--indigo);font-weight:600}
+
+/* ---------- Consultation (closing CTA) ---------- */
+.consult{background:linear-gradient(150deg,#15174A 0%,#2C308B 60%,#47309A 100%);color:#fff;overflow:hidden;padding:120px 0}
+.consult-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:72px;align-items:center}
+.consult .easy{font-size:clamp(40px,5.4vw,70px)}
+.consult-lead{font-size:19px;color:#DCDDF3;max-width:44ch;margin:24px 0 30px}
+.ticks{display:grid;gap:14px;margin-bottom:34px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.ticks svg{flex:none;width:22px;height:22px;margin-top:2px;color:#F9A03F;stroke-width:2.6}
+.consult-tel{font-size:15.5px;color:#C9CBE8}
+.consult-tel a{color:#fff;font-weight:700;text-decoration:none;white-space:nowrap}
+.consult-tel a:hover{text-decoration:underline}
+.form-card{background:#fff;color:var(--ink);border-radius:24px;padding:34px 34px 30px;box-shadow:0 40px 90px -30px rgba(8,9,30,.75)}
+.form-card h3{font-size:25px;line-height:1.2;letter-spacing:-.015em}
+.form-sub{color:var(--slate);font-size:15.5px;margin:6px 0 22px}
+.grp{border:0;padding:0;margin:0 0 18px}
+.grp legend{padding:0;font-size:13.5px;font-weight:600;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px 9px 11px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:14.5px;font-weight:600;cursor:pointer;transition:.15s}
+.chip svg{width:16px;height:16px;padding:2px;border-radius:50%;border:1.5px solid var(--line-2);color:transparent;box-sizing:content-box;stroke-width:3}
+.chip:hover{border-color:var(--indigo-300)}
+.chip:has(input:checked){border-color:var(--indigo);background:var(--indigo-50);color:var(--indigo)}
+.chip:has(input:checked) svg{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.chip:has(input:focus-visible){outline:3px solid #7C7FF0;outline-offset:2px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.field{display:block}
+.field.wide{grid-column:1/-1}
+.field>span{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+.field i{font-style:normal;font-weight:400;color:var(--slate)}
+.field input,.field select{width:100%;padding:12px 14px;border-radius:11px;border:1.5px solid var(--line-2);background:#fff;font-size:15.5px;transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 4px var(--indigo-100)}
+.field.err input{border-color:var(--red)}
+.field .msg{display:none;font-size:13px;color:var(--red-btn);margin-top:4px;font-weight:500}
+.field.err .msg{display:block}
+.form-card form .btn{width:100%;margin-top:20px}
+.fine{font-size:13px;color:var(--slate);margin-top:14px;text-align:center}
+.fine a{color:var(--indigo);font-weight:600}
+.done{text-align:center;padding:34px 0 20px}
+.done-ic{width:72px;height:72px;border-radius:50%;margin:0 auto 24px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#522E90,#CC3366 55%,#F08A24)}
+.done-ic svg{width:34px;height:34px}
+.done h3{font-size:28px;margin-bottom:12px}
+.done h3:focus{outline:none}
+.done p{color:var(--slate)}
+.done .mock{font-size:13px;width:fit-content;margin:20px auto 24px;padding:8px 12px;border-radius:10px;background:var(--indigo-50)}
+
+/* ---------- Footer (shared) ---------- */
+.ftr{background:var(--indigo-950);color:#C9CBE8;padding:76px 0 30px;font-size:15px;border-top:1px solid rgba(255,255,255,.1)}
+.ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+.ftr-logos{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.ftr-logos img:first-child{height:50px;width:auto}
+.ftr-logos img:last-child{height:26px;width:auto}
+.ftr-logos span{width:1px;height:40px;background:rgba(255,255,255,.25)}
+.ftr address{font-style:normal;line-height:1.7}
+.ftr a{text-decoration:none}
+.ftr a:hover,.ftr a[aria-current]{color:#fff}
+.ftr .tel{color:#fff;font-weight:700;font-size:18px}
+.ftr h4{color:#fff;font-size:15px;margin:0 0 16px}
+.ftr li{margin-bottom:9px}
+.ftr-print{margin-top:22px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.06);max-width:330px}
+.ftr-print a{color:#fff;font-weight:600}
+.ftr-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px}
+.ftr-bot div{display:flex;gap:22px}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .nav,.hdr-tel{display:none}
+  .burger{display:grid}
+  .hdr .btn{display:none}
+  .nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:100%;left:0;right:0;background:#fff;padding:12px 24px 20px;border-bottom:1px solid var(--line);box-shadow:0 30px 40px -30px rgba(16,18,51,.4);margin:0}
+  .nav.open .menu{display:none}
+  .nav.open .nav-l{width:100%;padding:14px 4px;font-size:17px;border-bottom:1px solid var(--line);border-radius:0}
+  .nav.open .nav-l svg,.nav.open .nav-l.is-cur::after{display:none}
+  .hero-grid,.ana,.feature{gap:44px}
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:44px;padding-top:0}
+  .steps::before,.steps li::before{display:none}
+  .facts li{padding:2px 20px}
+  .consult-grid{gap:48px}
+}
+@media (max-width:900px){
+  .sec,.consult{padding:84px 0}
+  .hero{padding-bottom:150px}
+  .hero-grid{grid-template-columns:1fr;padding-top:40px}
+  .hero-shot{max-width:560px}
+  .facts{grid-template-columns:1fr 1fr;gap:26px 0;padding:28px 6px}
+  .facts li:nth-child(3){border-left:0}
+  .ana,.feature,.voices,.duo,.faq,.consult-grid{grid-template-columns:minmax(0,1fr)}
+  .voices{gap:44px}
+  .faq{gap:36px}
+  .faq-side{position:static}
+  .steps{grid-template-columns:1fr 1fr}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr}
+  .custom{flex-direction:column;align-items:flex-start}
+  .ftr-top{grid-template-columns:1fr 1fr}
+  .util-l{display:none}
+  .util .wrap{justify-content:center}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{width:min(1200px,100% - 32px)}
+  .tagline{font-size:clamp(42px,12.6vw,64px)}
+  .hero-shot figcaption{flex-direction:column;gap:2px}
+  .facts{grid-template-columns:1fr;gap:0;padding:6px 20px}
+  .facts li,.facts li:nth-child(3){display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;align-items:center;padding:15px 0;border-left:0;border-top:1px solid var(--line)}
+  .facts li:first-child{border-top:0}
+  .facts strong{font-size:22px}
+  .facts span{margin-top:0;font-size:14px;text-wrap:wrap}
+  .stage{padding:24px 18px 74px}
+  .stage-hint{left:18px;bottom:20px;max-width:calc(100% - 160px);font-size:12.5px}
+  .m-nav .sk:nth-of-type(n+2),.m-form .m-in+.m-in,.bw-url em{display:none}
+  .m-h{font-size:14px}
+  .m-form{margin-right:118px}
+  .ph{right:12px;width:108px}
+  .ana-item{padding:13px 12px;gap:13px}
+  .lists{grid-template-columns:1fr}
+  .steps,.work-grid{grid-template-columns:1fr}
+  .deadline{align-items:flex-start}
+  .card{padding:30px 24px}
+  .f-links{grid-template-columns:1fr}
+  .custom{padding:26px 24px}
+  .custom .btn,.hero-cta .btn{width:100%}
+  .ans{padding-right:8px}
+  .form-card{padding:26px 20px 22px}
+  .fields{grid-template-columns:1fr}
+  .ftr-top{grid-template-columns:1fr;gap:34px}
+  .ftr-logos{gap:12px}
+  .ftr-logos img:first-child{height:42px}
+  .ftr-logos img:last-child{height:22px}
+  .util-r a:first-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m4 20 1-4L16 5l3 3L8 19l-4 1Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><circle cx="8.5" cy="8.5" r="2"/><path d="m3 18 5.5-6 4 4 3-3L21 18"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+</svg>
+
+<!-- Utility bar: ties the digital team to the Allegra print shop -->
+<div class="util">
+  <div class="wrap">
+    <span class="util-l">Web, marketing and print under one roof in Portage, Michigan</span>
+    <span class="util-r">
+      <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Need print, mail or signs? Visit Allegra Portage<svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></a>
+      <a href="tel:269-324-0040">269-324-0040</a>
+    </span>
+  </div>
+</div>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="homepage.html" aria-label="Creative Marketing Group home">
+      <img src="https://allegracmg.com/wp-content/uploads/2024/11/CMG-Allegra-horiz.webp" width="460" height="60" alt="Creative Marketing Group | Allegra Marketing Print Mail">
+    </a>
+    <ul class="nav" id="nav">
+      <li>
+        <button class="nav-l is-cur" type="button" aria-haspopup="true">Web <svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>web</b> easy.</p>
+          <a href="#" aria-current="page">Website Design<span>Custom, mobile-friendly sites that convert</span></a>
+          <a href="#">Ecommerce Web Design<span>Online stores that are simple to run</span></a>
+          <a href="#">Web Hosting<span>Fast, secure and looked after for you</span></a>
+          <a href="#">ADA Compliance<span>Accessible to every visitor</span></a>
+          <a href="#">Systems Integration<span>Connect your site to your CRM or ERP</span></a>
+          <a href="#">Marketing Automation<span>Follow-up that runs itself</span></a>
+        </div>
+      </li>
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Marketing <svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>marketing</b> easy.</p>
+          <a href="#">Search Engine Optimization<span>Rank higher, get found first</span></a>
+          <a href="#">Pay-Per-Click Advertising<span>Ads that reach ready-to-buy customers</span></a>
+          <a href="#">Local Listings<span>Show up on maps and local search</span></a>
+          <a href="#">Landing Pages<span>Pages built for one job: converting</span></a>
+          <a href="#">Email Marketing<span>Stay top of mind with your customers</span></a>
+          <a href="#">Reputation Management<span>More reviews, better reviews</span></a>
+        </div>
+      </li>
+      <li>
+        <button class="nav-l" type="button" aria-haspopup="true">Creative <svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></button>
+        <div class="menu">
+          <p class="easy menu-h">We make <b>branding</b> easy.</p>
+          <a href="#">Brand Development<span>Logos and identities that fit</span></a>
+          <a href="graphic-design.html">Graphic Design<span>Design for screen and print</span></a>
+          <a href="#">Content Creation<span>Words and visuals that sell</span></a>
+          <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Print, Mail &amp; Signs<span>Produced in-house by Allegra Portage</span></a>
+        </div>
+      </li>
+      <li><a class="nav-l" href="#work">Work</a></li>
+      <li><a class="nav-l" href="#">About</a></li>
+      <li><a class="nav-l" href="homepage.html#insights">Insights</a></li>
+    </ul>
+    <a class="hdr-tel" href="tel:269-324-0040">269-324-0040</a>
+    <a class="btn btn-red" href="#consult">Get a proposal</a>
+    <button class="burger" type="button" aria-label="Open menu" aria-controls="nav" aria-expanded="false" id="burger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="rb" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
+        <stop offset="0" stop-color="#9A97F5" stop-opacity="0"/>
+        <stop offset=".32" stop-color="#9A7BEA"/>
+        <stop offset=".6" stop-color="#E0518A"/>
+        <stop offset=".82" stop-color="#F0506A"/>
+        <stop offset="1" stop-color="#F9A03F"/>
+      </linearGradient>
+    </defs>
+    <g id="lines" fill="none" stroke="url(#rb)" stroke-width="1.1"></g>
+  </svg>
+
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="#">Website Services</a></li>
+        <li aria-current="page">Website Design</li>
+      </ol>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Website design · Portage, Michigan</p>
+        <h1 class="easy on-dark tagline">We make<br><b>websites</b> easy.</h1>
+        <p class="hero-lead"><strong>Custom, responsive websites that connect with visitors, drive engagement and sell more.</strong> Strategy, copywriting, design, development and support are all handled for you by one in-house team.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="#consult">Get a free proposal <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="#work">See recent work</a>
+        </div>
+      </div>
+      <figure class="hero-shot">
+        <img src="https://allegracmg.com/wp-content/uploads/2024/02/Airport-1108x637.webp" width="1108" height="637" alt="Kalamazoo/Battle Creek International Airport website shown on a laptop and a phone">
+        <figcaption><b>Kalamazoo/Battle Creek International Airport</b><span>Website by Creative Marketing Group</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACT BAR ============ -->
+<section class="facts-sec" aria-label="At a glance">
+  <div class="wrap">
+    <ul class="facts">
+      <li><strong>60–90 days</strong><span>from kickoff to launch for most sites</span></li>
+      <li><strong>$0 down</strong><span>no costly down payment to get started</span></li>
+      <li><strong>24 hours</strong><span>to a free proposal after your consultation</span></li>
+      <li><strong>100% in-house</strong><span>every line of code, every word of copy</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ANATOMY ============ -->
+<section class="sec" id="included">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">What you get</p>
+        <h2 class="easy h2">What's built into <b>every site.</b></h2>
+      </div>
+      <p class="lead">Good looks earn the first click. These six things, standard on every build, turn it into a customer.</p>
+    </div>
+
+    <div class="ana">
+      <!-- Decorative diagram: the list beside it carries the content -->
+      <div class="stage" id="stage" aria-hidden="true">
+        <div class="bw">
+          <div class="bw-bar">
+            <span class="bw-dots"><i></i><i></i><i></i></span>
+            <span class="bw-url hot" data-r="4">
+              <svg class="i" viewBox="0 0 24 24"><use href="#i-lock"/></svg><b>yourbusiness.com</b><em>Your Business | Portage, MI</em>
+              <span class="pin p4" data-pin="4">4</span>
+            </span>
+          </div>
+          <div class="m-nav">
+            <span class="m-logo"></span>
+            <i class="sk" style="width:34px"></i><i class="sk" style="width:44px"></i><i class="sk" style="width:30px"></i>
+            <span class="m-btn hot" data-r="2">Get a quote</span>
+          </div>
+          <div class="m-hero hot" data-r="1">
+            <div>
+              <span class="m-h">Your best work,<br>front and center.</span>
+              <i class="sk" style="width:94%"></i><i class="sk" style="width:70%"></i>
+              <span class="m-btn hot" data-r="2">Get a quote<span class="pin p2" data-pin="2">2</span></span>
+            </div>
+            <div class="m-img"><svg class="i" viewBox="0 0 24 24" style="stroke-width:1.6"><use href="#i-image"/></svg></div>
+            <span class="pin p1" data-pin="1">1</span>
+          </div>
+          <div class="m-cards">
+            <div class="m-card hot" data-r="5">
+              <span class="m-ic"></span><i class="sk" style="width:80%"></i><i class="sk" style="width:60%"></i>
+              <span class="m-edit"><svg class="i" viewBox="0 0 24 24"><use href="#i-pencil"/></svg>Edit</span>
+              <span class="pin p5" data-pin="5">5</span>
+            </div>
+            <div class="m-card"><span class="m-ic"></span><i class="sk" style="width:74%"></i><i class="sk" style="width:52%"></i></div>
+            <div class="m-card"><span class="m-ic"></span><i class="sk" style="width:66%"></i><i class="sk" style="width:48%"></i></div>
+          </div>
+          <div class="m-form hot" data-r="6">
+            <span class="m-in"></span><span class="m-in"></span><span class="m-send">Send</span>
+            <svg class="i m-flow" viewBox="0 0 24 12"><path d="M1 6h20M16 1.5 21 6l-5 4.5"/></svg>
+            <span class="m-crm">Your CRM</span>
+            <span class="pin p6" data-pin="6">6</span>
+          </div>
+        </div>
+        <div class="ph hot" data-r="3">
+          <div class="ph-scr">
+            <div class="ph-top"><span class="m-logo"></span><i></i></div>
+            <div class="m-img"><svg class="i" viewBox="0 0 24 24" style="stroke-width:1.6"><use href="#i-image"/></svg></div>
+            <span class="m-h">Your best work, front and center.</span>
+            <i class="sk" style="width:92%"></i><i class="sk" style="width:64%"></i>
+            <span class="m-btn">Get a quote</span>
+          </div>
+          <span class="pin p3" data-pin="3">3</span>
+        </div>
+        <p class="stage-hint">Pick a number to see where it lives on the page.</p>
+      </div>
+
+      <ol class="ana-list" id="ana-list">
+        <li><button type="button" class="ana-item" data-pin="1" aria-pressed="true"><span class="ana-n">1</span><span><strong>Design that makes a lasting impression</strong><span class="d">Imagery, icons and words working in concert, custom designed around your brand.</span></span></button></li>
+        <li><button type="button" class="ana-item" data-pin="2" aria-pressed="false"><span class="ana-n">2</span><span><strong>Next steps in the right places</strong><span class="d">Strategically placed calls to action turn visitors into leads instead of leaving them guessing.</span></span></button></li>
+        <li><button type="button" class="ana-item" data-pin="3" aria-pressed="false"><span class="ana-n">3</span><span><strong>At home on every screen</strong><span class="d">Responsive layouts that work as well on a phone as they do on a desktop monitor.</span></span></button></li>
+        <li><button type="button" class="ana-item" data-pin="4" aria-pressed="false"><span class="ana-n">4</span><span><strong>Ready for Google from day one</strong><span class="d">Proper title tags, meta descriptions, headings and an XML sitemap, built into every site.</span></span></button></li>
+        <li><button type="button" class="ana-item" data-pin="5" aria-pressed="false"><span class="ana-n">5</span><span><strong>Simple for you to update</strong><span class="d">A user-friendly CMS, in-depth training and a written manual for adding pages, content and images.</span></span></button></li>
+        <li><button type="button" class="ana-item" data-pin="6" aria-pressed="false"><span class="ana-n">6</span><span><strong>Connected to the tools you use</strong><span class="d">Sales systems, ecommerce and marketing automation tied in, so your site works with your business.</span></span></button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOUR PART / OUR PART ============ -->
+<section class="sec tint">
+  <div class="wrap feature">
+    <div>
+      <p class="eyebrow">Done for you</p>
+      <h2 class="easy h2">We make <b>your part</b> easy.</h2>
+      <p class="lead">Most website projects stall while someone waits on copy, photos or decisions. Ours don't, because we do that part too. Our hands-off approach covers everything you need, and it all happens under one roof.</p>
+      <dl class="never">
+        <dt>Do you outsource any of your work?</dt>
+        <dd><b>Never.</b> Every line of code, every word of copy and every image is created by us, for you. You can email, call or visit the people working on your project at any time.</dd>
+      </dl>
+    </div>
+
+    <div class="lists">
+      <div class="lcard l-you">
+        <div class="lcard-h"><h3>Your list</h3><span>3 things</span></div>
+        <ol>
+          <li><i>1</i>Tell us about your business</li>
+          <li><i>2</i>React to what we show you</li>
+          <li><i>3</i>Approve the launch</li>
+        </ol>
+        <p>That's it. No homework.</p>
+      </div>
+      <div class="lcard l-us">
+        <div class="lcard-h"><h3>Our list</h3><span>Everything else</span></div>
+        <ul>
+          <li style="--c:#9A97F5"><i></i><div><strong>Strategy</strong><span>Goals, audience, sitemap and page plan</span></div></li>
+          <li style="--c:#C86BD0"><i></i><div><strong>Copywriting</strong><span>Every page, written by our on-staff writers</span></div></li>
+          <li style="--c:#F0527A"><i></i><div><strong>Graphic design</strong><span>Custom layouts, imagery and icons</span></div></li>
+          <li style="--c:#F7785C"><i></i><div><strong>Development</strong><span>Responsive build, SEO setup and testing</span></div></li>
+          <li style="--c:#F9A03F"><i></i><div><strong>Support</strong><span>Training, a manual and help after launch</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">How a website project runs</p>
+        <h2 class="easy h2">We make <b>the process</b> easy.</h2>
+      </div>
+      <p class="lead">Five stages, one point of contact, and your feedback built in along the way.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="n">01</span><h3>Discovery</h3><p>We meet with you to talk through your needs and pin down where we can help.</p></li>
+      <li><span class="n">02</span><h3>Strategy</h3><p>You get a plan that addresses those needs and fits within your budget.</p></li>
+      <li><span class="n">03</span><h3>Production</h3><p>We produce the structure, imagery and text, checking in with you regularly.</p></li>
+      <li><span class="n">04</span><h3>Evaluation</h3><p>You review the finished site and we make any adjustments you ask for.</p></li>
+      <li><span class="n">05</span><h3>Launch</h3><p>Your site goes live, we train your team, and we shift to helping it grow.</p></li>
+    </ol>
+    <p class="deadline">
+      <svg class="i" viewBox="0 0 24 24" style="stroke-width:1.8" aria-hidden="true"><use href="#i-clock"/></svg>
+      <span><strong>Most sites launch in 60 to 90 days.</strong> Have a date in mind? We can work to your deadline, or split a larger project into stages that launch at different times.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="sec work" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Recent work</p>
+        <h2 class="h2">Sites we've <b>launched.</b></h2>
+      </div>
+      <a class="btn btn-line" href="#">See all work <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="work-grid">
+      <a class="proj" href="https://areawidetransport.com/" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2026/04/Area-Wide-Transport-768x441.webp" width="768" height="441" loading="lazy" alt="Area Wide Transport website on laptop and phone"></div>
+        <h3>Area Wide Transport <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></h3>
+        <p>areawidetransport.com</p>
+      </a>
+      <a class="proj" href="https://kalamazooaircraft.com/" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2024/02/Kalamazoo-Aircraft-768x441.webp" width="768" height="441" loading="lazy" alt="Kalamazoo Aircraft website on laptop and phone"></div>
+        <h3>Kalamazoo Aircraft <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></h3>
+        <p>kalamazooaircraft.com</p>
+      </a>
+      <a class="proj" href="https://lehmkuhlassociates.com/" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2026/04/Lehmkuhl-768x441.webp" width="768" height="441" loading="lazy" alt="Lehmkuhl Associates website on laptop and phone"></div>
+        <h3>Lehmkuhl Associates <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></h3>
+        <p>lehmkuhlassociates.com</p>
+      </a>
+      <a class="proj" href="https://amplirollusa.com/" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2026/04/Marrell-Corp-768x441.webp" width="768" height="441" loading="lazy" alt="Marrell Corp website on laptop and phone"></div>
+        <h3>Marrell Corp <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></h3>
+        <p>amplirollusa.com</p>
+      </a>
+      <a class="proj" href="https://unclejohnsdeckmounts.com/" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2026/04/Uncle-Johns-1-768x441.webp" width="768" height="441" loading="lazy" alt="Uncle John's Deck Mounts website on laptop and phone"></div>
+        <h3>Uncle John's Deck Mounts <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></h3>
+        <p>unclejohnsdeckmounts.com</p>
+      </a>
+      <a class="proj" href="https://foremostgraphics.com" target="_blank" rel="noopener">
+        <div class="proj-img"><img src="https://allegracmg.com/wp-content/uploads/2024/02/Foremost-1-768x441.webp" width="768" height="441" loading="lazy" alt="Foremost Graphics website on laptop and phone"></div>
+        <h3>Foremost Graphics <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></h3>
+        <p>foremostgraphics.com</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section class="sec" id="packages">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Website packages</p>
+        <h2 class="easy h2">We make <b>budgeting</b> easy.</h2>
+      </div>
+      <p class="lead">No down payment. One monthly price covers your website, hosting, security and regular redesigns.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan" style="--c:#2C308B;--bar:linear-gradient(90deg,#2C308B,#522E90)">
+        <h3 class="plan-name">Online Essentials</h3>
+        <p class="plan-for">A professional site with the basics handled.</p>
+        <p class="price"><strong>$449</strong><span>per month</span></p>
+        <ul>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>10-page website</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Economy hosting</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>SSL security and backups</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Domain registration</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Copyediting included</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Local listings management</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>SEO metadata setup</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>One-on-one training</li>
+        </ul>
+        <a class="btn btn-ghost" href="#consult" data-pack="Online Essentials">Get Essentials <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="plan" style="--c:#522E90;--bar:linear-gradient(90deg,#522E90,#CC3366)">
+        <h3 class="plan-name">Business Builder</h3>
+        <p class="plan-for">A bigger site with marketing every month.</p>
+        <p class="price"><strong>$899</strong><span>per month</span></p>
+        <ul>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>20-page website</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Standard hosting</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Copywriting included</li>
+          <li class="plus">Everything in Essentials, plus</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Monthly SEO optimization and reporting</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Monthly content writing and additions</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Google Ads setup and management</li>
+        </ul>
+        <a class="btn btn-ghost" href="#consult" data-pack="Business Builder">Get Business Builder <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="plan" style="--c:#B52A5B;--bar:linear-gradient(90deg,#CC3366,#E21C40 45%,#F08A24)">
+        <h3 class="plan-name">Premium Ecommerce</h3>
+        <p class="plan-for">A full online store, marketed for you.</p>
+        <p class="price"><strong>$1,599</strong><span>per month</span></p>
+        <ul>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>30-page website</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Premium hosting</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Unlimited ecommerce products</li>
+          <li class="plus">Everything in Business Builder, including</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Monthly SEO optimization and reporting</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Monthly content writing and additions</li>
+          <li><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Google Ads setup and management</li>
+        </ul>
+        <a class="btn btn-ghost" href="#consult" data-pack="Premium Ecommerce">Get Premium <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+
+    <div class="custom">
+      <div>
+        <h3>None of these quite fit?</h3>
+        <p>Every package is flexible and can be modified. We'll work with you to build a custom, cost-efficient package that meets your needs without breaking your budget.</p>
+      </div>
+      <a class="btn btn-red" href="#consult" data-pack="A custom package">Schedule a free consultation <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="sec tint">
+  <div class="wrap voices">
+    <div>
+      <p class="eyebrow">Why our clients love us</p>
+      <blockquote>
+        <p class="easy bigq">“They revised our website, <b>beautifully</b> and affordably.”</p>
+        <p class="who"><strong>Melissa Reed</strong>Cultural Tour Consultants</p>
+      </blockquote>
+    </div>
+    <div class="qs">
+      <blockquote class="q"><p>“They made the process so easy.”</p><footer><b>Holly Cherry</b> · Kneading Relaxation</footer></blockquote>
+      <blockquote class="q"><p>“It's nice to have local people that I can call and talk with any questions.”</p><footer><b>Craig Bradfield</b> · Hand Therapy of Michigan</footer></blockquote>
+      <blockquote class="q"><p>“Creative Marketing Group has been advising us for over 20 years.”</p><footer><b>Jim Van Tuinen</b> · Van Tuinen Painting</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S NEXT + PRINT ============ -->
+<section class="sec">
+  <div class="wrap duo">
+    <div class="card card-brand">
+      <p class="eyebrow">After launch</p>
+      <h2 class="easy">We make <b>what's next</b> easy.</h2>
+      <p>Your company keeps evolving and your site should keep up. The team that builds it can also host it, protect it and bring it more of the right visitors.</p>
+      <ul class="f-links">
+        <li><a href="#">Web Hosting <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#">Search Engine Optimization <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#">Ecommerce Web Design <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#">Local Listings <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#">ADA Compliance <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#">Pay-Per-Click Advertising <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a></li>
+      </ul>
+      <a class="tlink" href="#">All website services <svg class="i" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="card card-print">
+      <img class="al" src="https://allegracmg.com/wp-content/uploads/2024/11/AllegraMPM-rev.webp" width="250" height="39" loading="lazy" alt="Allegra Marketing Print Mail">
+      <h2 class="easy on-dark">We make <b>print</b> match, too.</h2>
+      <p>New site, new look? Allegra Portage prints and mails your business cards, brochures, signs and direct mail in-house, so your brand matches on screen and on paper.</p>
+      <div class="tags">
+        <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#9BC53D"></i>Print</a>
+        <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#F08A24"></i>Direct Mail</a>
+        <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#F0506A"></i>Signs</a>
+        <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener"><i style="--c:#C7A6FF"></i>Promo</a>
+      </div>
+      <a class="tlink" href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Visit Allegra Portage <svg class="i" viewBox="0 0 24 24"><use href="#i-ext"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec tint" id="faq">
+  <div class="wrap faq">
+    <div class="faq-side">
+      <p class="eyebrow">Frequently asked questions</p>
+      <h2 class="easy h2">Questions, <b>answered.</b></h2>
+      <p class="lead">Straight answers to what we hear most. If yours isn't here, a real person in Portage will pick up.</p>
+      <a class="btn btn-ghost" href="tel:269-324-0040">Call 269-324-0040</a>
+    </div>
+    <div>
+      <details class="qa" name="faq" open>
+        <summary>How much does a new website design cost? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>No two projects are alike, so we start with a free, no-obligation consultation. Whether you need a simple brochure-style site, a complicated ecommerce site or anything in between, we'll generate a custom quote for the pages, features and functionality you want.</p>
+          <p>Our websites are affordably priced and we don't require costly down payments. <a href="#packages">See our website packages</a> for a starting point.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>How long does the process take? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>In most cases, we strive to complete our website designs in 60 to 90 days. The timeframe largely depends on your responsiveness and the complexity of your project. Ecommerce sites with thousands of products, for example, may need additional time.</p>
+          <p>We can work to meet your deadlines and, when needed, split your project into multiple stages that launch at different times.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>What is your web design process? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>Our process is split into five main stages: discovery, strategy, production, evaluation and launch. We meet with you to discuss your needs, develop a strategy that fits your budget, then produce the site's structure, imagery and text while regularly asking for your feedback.</p>
+          <p>Once it's complete, you evaluate the site and we make any adjustments you request. Then your site is launched and our team shifts gears to grow your company with ongoing digital marketing.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Does Creative Marketing Group provide text and images? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>Yes, we can. Assembling content for a new website is time-consuming, so we handle it. Our graphic design team has access to a large catalog of stock photography, and we have experienced writers on staff to help with copywriting, content marketing and strategy.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Do you outsource any of your work? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>Never. We take pride in our work and we believe in accountability. Every line of code, every word of copy and every speck of imagery is created by us, for you. You can email, call or visit the individuals working on your project at any time.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Are your websites optimized for search engines? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>Yes. Whether or not you sign up for ongoing help with your search rankings, your site will be built with SEO best practices in mind. It will have proper meta descriptions, title tags, headings and an XML sitemap.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>Do you provide training on how to use new websites? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>After your site goes live, we provide in-depth training on how to add pages, content, images and more, plus a detailed manual you can use as a reference. With our user-friendly CMS, you'll be making simple changes in no time. And if you ever have questions, you can always reach out to us for help.</p>
+        </div>
+      </details>
+      <details class="qa" name="faq">
+        <summary>How often should I redesign my website? <span class="pm"><svg class="i" viewBox="0 0 24 24"><use href="#i-plus"/></svg></span></summary>
+        <div class="ans">
+          <p>As a rule of thumb, every two to three years. Technologies are developed and retired, design trends emerge and fade, and your website needs to keep meeting your customers' expectations. If it's more than five years old, it's falling short.</p>
+          <p>We know that pace can be challenging, which is why we offer hassle-free, no-money-down packages that keep an up-to-date website within every company's reach.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSULTATION ============ -->
+<section class="consult" id="consult">
+  <svg class="hero-lines" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g id="lines2" fill="none" stroke="url(#rb)" stroke-width="1.1"></g></svg>
+  <div class="wrap consult-grid">
+    <div>
+      <h2 class="easy on-dark">We make <b>getting started</b> easy.</h2>
+      <p class="consult-lead">Tell us a little about your project. We'll set up a free consultation and follow it with a written proposal.</p>
+      <ul class="ticks">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Free, no-obligation consultation</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Proposal within 24 hours of your consultation</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>No costly down payment</li>
+      </ul>
+      <p class="consult-tel">Rather just talk? Call <a href="tel:269-324-0040">269-324-0040</a> and a real person in Portage will pick up.</p>
+    </div>
+
+    <div class="form-card" id="c-card">
+      <form id="c-form" novalidate>
+        <h3>Schedule a free consultation</h3>
+        <p class="form-sub">It takes about a minute.</p>
+        <fieldset class="grp">
+          <legend>What do you need?</legend>
+          <div class="chips">
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="A new website" checked><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>A new website</label>
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="A redesign"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>A redesign</label>
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="An online store"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>An online store</label>
+            <label class="chip"><input class="sr-only" type="radio" name="need" value="Not sure yet"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Not sure yet</label>
+          </div>
+        </fieldset>
+        <div class="fields">
+          <label class="field" data-f="name"><span>Your name</span><input name="name" autocomplete="name"><span class="msg">Please tell us your name.</span></label>
+          <label class="field"><span>Business <i>(optional)</i></span><input name="company" autocomplete="organization"></label>
+          <label class="field" data-f="email"><span>Email</span><input name="email" type="email" autocomplete="email"><span class="msg">Please enter a valid email.</span></label>
+          <label class="field"><span>Phone <i>(optional)</i></span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="field"><span>Current website <i>(optional)</i></span><input name="site" inputmode="url" autocomplete="url" placeholder="yourbusiness.com"></label>
+          <label class="field"><span>Package</span><select name="pack" id="c-pack"><option>Not sure yet</option><option>Online Essentials</option><option>Business Builder</option><option>Premium Ecommerce</option><option>A custom package</option></select></label>
+        </div>
+        <button type="submit" class="btn btn-red">Request my consultation <svg class="i arr" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+        <p class="fine">By submitting this form, you agree to our <a href="#">data policy</a>. We never sell or share client data.</p>
+      </form>
+      <div class="done" id="c-done" hidden>
+        <div class="done-ic"><svg class="i" viewBox="0 0 24 24" style="stroke-width:2.4"><use href="#i-check"/></svg></div>
+        <h3 id="c-done-h" tabindex="-1"></h3>
+        <p id="c-done-p"></p>
+        <p class="mock">Mockup only: nothing was actually sent.</p>
+        <button type="button" class="btn btn-ghost" id="c-restart">Start over</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div>
+        <div class="ftr-logos">
+          <img src="https://allegracmg.com/wp-content/uploads/2020/05/cmg-logo-rev.png" width="249" height="76" loading="lazy" alt="Creative Marketing Group">
+          <span></span>
+          <img src="https://allegracmg.com/wp-content/uploads/2024/11/AllegraMPM-rev.webp" width="250" height="39" loading="lazy" alt="Allegra Marketing Print Mail">
+        </div>
+        <address>6054 Lovers Lane<br>Portage, MI 49002<br><a class="tel" href="tel:269-324-0040">269-324-0040</a></address>
+        <p class="ftr-print">Need offline marketing materials? <a href="https://www.allegramarketingprint.com/locations/portage-mi/" target="_blank" rel="noopener">Visit Allegra Portage ↗</a></p>
+      </div>
+      <div>
+        <h4>Website Services</h4>
+        <ul><li><a href="#" aria-current="page">Website Design</a></li><li><a href="#">Ecommerce Web Design</a></li><li><a href="#">Web Hosting</a></li><li><a href="#">ADA Compliance</a></li><li><a href="#">Systems Integration</a></li><li><a href="#">Marketing Automation</a></li></ul>
+      </div>
+      <div>
+        <h4>Marketing Services</h4>
+        <ul><li><a href="#">Search Engine Optimization</a></li><li><a href="#">Pay-Per-Click Advertising</a></li><li><a href="#">Local Listings</a></li><li><a href="#">Landing Pages</a></li><li><a href="#">Email Marketing</a></li><li><a href="#">Reputation Management</a></li></ul>
+      </div>
+      <div>
+        <h4>Creative &amp; Company</h4>
+        <ul><li><a href="#">Brand Development</a></li><li><a href="graphic-design.html">Graphic Design</a></li><li><a href="#">Content Creation</a></li><li><a href="#work">Portfolio</a></li><li><a href="homepage.html#insights">News &amp; Insights</a></li><li><a href="#consult">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 Creative Marketing Group</span>
+      <div><a href="#">Privacy</a><a href="#">Accessibility</a><a href="https://www.facebook.com/creativemarketinggroup" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- In-page links: "#" placeholders stay put, "#section" links scroll there ---------- */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]'); if (!a) return;
+    e.preventDefault();
+    var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
+    t.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    try { history.replaceState(null, '', '#' + t.id); } catch (err) {}
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var burger = $('#burger'), nav = $('#nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); } });
+
+  /* ---------- Ribbon lines (same generator as the homepage) ---------- */
+  function drawLines(id, n){
+    var g = document.getElementById(id); if (!g) return;
+    var s = '';
+    for (var i = 0; i < n; i++){
+      var t = i / (n - 1);
+      var y0 = 690 - t * 130, c1 = 330 + t * 300, c2 = 640 - t * 520, y1 = 30 + t * 250;
+      var o = (0.2 + 0.6 * Math.sin(Math.PI * t)).toFixed(2);
+      s += '<path d="M-40 ' + y0.toFixed(1) + ' C 420 ' + c1.toFixed(1) + ', 900 ' + c2.toFixed(1) + ', 1480 ' + y1.toFixed(1) + '" opacity="' + o + '"/>';
+    }
+    g.innerHTML = s;
+  }
+  drawLines('lines', 30);
+  drawLines('lines2', 30);
+
+  /* ---------- Anatomy: list items and diagram pins highlight each other ---------- */
+  (function(){
+    var stage = $('#stage'), items = $$('.ana-item');
+    if (!stage || !items.length) return;
+    var cur = '1', timer = null, touched = false;
+    function setPin(n){
+      cur = String(n);
+      items.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.pin === cur); });
+      $$('[data-r]', stage).forEach(function(el){ el.classList.toggle('is-on', el.dataset.r === cur); });
+      $$('.pin', stage).forEach(function(el){ el.classList.toggle('is-on', el.dataset.pin === cur); });
+    }
+    function stop(){ touched = true; clearInterval(timer); timer = null; }
+    items.forEach(function(b){
+      var pick = function(){ stop(); setPin(b.dataset.pin); };
+      b.addEventListener('mouseenter', pick);
+      b.addEventListener('focus', pick);
+      b.addEventListener('click', pick);
+    });
+    var fromStage = function(e){
+      var p = e.target.closest('[data-pin],[data-r]');
+      if (p && stage.contains(p)) { stop(); setPin(p.dataset.pin || p.dataset.r); }
+    };
+    stage.addEventListener('click', fromStage);
+    stage.addEventListener('mouseover', function(e){ if (e.target.closest('.pin')) fromStage(e); });
+    setPin(1);
+
+    // Walk through the six points on its own until someone takes over.
+    if (reduced || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(en){
+      if (touched) return;
+      if (en[0].isIntersecting && !timer) timer = setInterval(function(){ setPin(+cur % items.length + 1); }, 3200);
+      else if (!en[0].isIntersecting) { clearInterval(timer); timer = null; }
+    }, { threshold: .35 }).observe(stage);
+  })();
+
+  /* ---------- Package buttons preselect the package in the consultation form ---------- */
+  $$('[data-pack]').forEach(function(a){
+    a.addEventListener('click', function(){ $('#c-pack').value = a.dataset.pack; });
+  });
+
+  /* ---------- Consultation form (mock submit) ---------- */
+  (function(){
+    var form = $('#c-form'), done = $('#c-done');
+    form.addEventListener('input', function(e){
+      var w = e.target.closest('.field'); if (w) w.classList.remove('err');
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = form.elements.name.value.trim(), email = form.elements.email.value.trim();
+      var okName = name.length > 1, okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      $('[data-f="name"]', form).classList.toggle('err', !okName);
+      $('[data-f="email"]', form).classList.toggle('err', !okMail);
+      if (!okName || !okMail) { form.elements[okName ? 'email' : 'name'].focus(); return; }
+      $('#c-done-h').textContent = 'Thanks, ' + name.split(/\s+/)[0] + '. We\'ll be in touch.';
+      $('#c-done-p').textContent = 'We\'ll reply to ' + email + ' within one business day to set up your free consultation.';
+      form.hidden = true; done.hidden = false;
+      $('#c-done-h').focus({ preventScroll: true });
+    });
+    $('#c-restart').addEventListener('click', function(){
+      form.reset(); done.hidden = true; form.hidden = false;
+      form.elements.name.focus({ preventScroll: true });
+    });
+  })();
+})();
+</script>
+</body>
+</html>
